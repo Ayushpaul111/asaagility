@@ -95,7 +95,6 @@ const Header: React.FC<{ isScrolled: boolean }> = ({ isScrolled }) => {
                 type="button"
                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-black focus:outline-none"
                 aria-controls="mobile-menu"
-                aria-expanded="isMenuOpen"
               >
                 <span className="sr-only">Open main menu</span>
                 <div className="w-6 h-6 relative">
