@@ -58,7 +58,7 @@ const FaqCard: React.FC<FaqCardProps> = ({ item }) => {
 };
 
 const FAQ: React.FC = () => {
-  const faqData: FAQItem[] = [
+  const faqData = [
     {
       question: "What is Popcorn?",
       answer:
