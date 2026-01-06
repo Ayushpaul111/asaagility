@@ -3,9 +3,9 @@ import PopcornIcon from "./icons/PopcornIcon";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="sticky bottom-0 z-0 bg-[#141414] text-gray-400 py-16 lg:py-24 rounded-t-3xl lg:rounded-t-[50px] bg-[url('https://cdn.prod.website-files.com/66797c2909f9ec0b1ff1a767/667e846c24ba851c63c4d965_dark-noise-2.png'),_linear-gradient(#393737,#1b1b1b)]">
+    <footer className="sticky bottom-0 z-0 bg-[#141414] text-gray-400 pt-16 lg:pt-24 rounded-t-3xl lg:rounded-t-[50px] bg-[url('https://cdn.prod.website-files.com/66797c2909f9ec0b1ff1a767/667e846c24ba851c63c4d965_dark-noise-2.png'),_linear-gradient(#393737,#1b1b1b)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-2 md:col-span-1">
             <a href="#" className="mb-6 inline-block">
               <PopcornIcon className="h-10 w-10" />
@@ -82,15 +82,15 @@ const Footer: React.FC = () => {
           >
             <text
               x="50%"
-              y="50%"
+              y="80%"
               dominantBaseline="middle"
               textAnchor="middle"
               fontFamily="Arial, sans-serif"
-              fontSize="150"
+              fontSize="170"
               fontWeight="bold"
               fill="white"
             >
-              Popcorn
+              ASHAAGILITY
             </text>
           </svg>
         </div>

@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
           <div className="absolute -inset-2 rainbow-gradient rounded-full opacity-60 blur-md"></div>
           <a
             href="#"
-            className="relative bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-full px-4 py-1.5 text-sm font-semibold"
+            className="relative bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-full px-4 py-1.5 text-sm text-gray-700/80 "
           >
             <strong>Now live in Alpha!</strong>
           </a>

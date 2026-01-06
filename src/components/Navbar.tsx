@@ -30,9 +30,8 @@ const Header: React.FC = () => {
   }, [scrollY]);
 
   const navItems = [
-    { id: "services", label: "SERVICES" },
-    { id: "doctor", label: "DOCTOR" },
-    { id: "testimonials", label: "TESTIMONIALS" },
+    { id: "products", label: "PRODUCTS" },
+    { id: "about-us", label: "ABOUT" },
   ];
 
   // Close menu when clicking outside or scrolling
