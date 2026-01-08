@@ -34,7 +34,7 @@ const CtaBanner: React.FC = () => {
                     </span>
                   </li>
                 </ul>
-                <div className="mt-6 inline-flex items-center space-x-2 bg-gradient-to-r from-green-200 to-yellow-100 rounded-full px-4 py-2 text-sm shadow-sm">
+                <div className="mt-6 inline-flex items-center space-x-2 text-black bg-linear-to-r from-green-200 to-yellow-100 rounded-full px-4 py-2 text-sm shadow-sm">
                   <span>Yes, we timed it.</span>
                   <svg
                     width="15"

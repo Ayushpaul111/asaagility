@@ -31,7 +31,7 @@ const Header: React.FC = () => {
 
   const navItems = [
     { id: "products", label: "PRODUCTS" },
-    { id: "about-us", label: "ABOUT" },
+    { id: "about-us", label: "ABOUT US" },
   ];
 
   // Close menu when clicking outside or scrolling
@@ -127,8 +127,8 @@ const Header: React.FC = () => {
             "rounded-full py-3",
             "flex items-center justify-between",
             isScrolled
-              ? "bg-blue-800/70 backdrop-blur-md border-white/20"
-              : "bg-blue-900",
+              ? "bg-[#5C905E]/70 backdrop-blur-md border-white/20"
+              : "bg-[#5C905E]",
             "shadow-lg",
             "border",
             "transition-all duration-300 ease-out"
@@ -155,7 +155,7 @@ const Header: React.FC = () => {
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-sm font-medium text-white hover:font-bold transition-colors whitespace-nowrap"
+                className="text-sm font-semibold text-white hover:font-bold transition-colors whitespace-nowrap"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -168,7 +168,9 @@ const Header: React.FC = () => {
             <motion.button
               className={cn(
                 "text-sm font-medium px-6 py-2 rounded-full whitespace-nowrap transition-all duration-300 ease-out",
-                isScrolled ? "bg-blue-900 text-white" : "bg-blue-200 text-black"
+                isScrolled
+                  ? "bg-[#375f39]/70 text-white"
+                  : "bg-[#375f39] text-white"
               )}
               style={{ scale: textSize }}
               whileHover={{ scale: 1.05, backgroundColor: "#1D4ED8" }}

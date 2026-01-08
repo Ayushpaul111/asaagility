@@ -90,7 +90,7 @@ const Footer: React.FC = () => {
               fontWeight="bold"
               fill="white"
             >
-              ASHAAGILITY
+              ASAAGILITY
             </text>
           </svg>
         </div>
