@@ -8,6 +8,7 @@ import {
   useTransform,
 } from "framer-motion";
 import { cn } from "../lib/utils";
+import Link from "next/link";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -82,36 +83,6 @@ const Header: React.FC = () => {
     setIsMenuOpen(false);
   };
 
-  const menuVariants = {
-    open: {
-      clipPath: "inset(0% 0% 0% 0%)",
-      transition: {
-        type: "spring",
-        bounce: 0,
-        duration: 0.7,
-        delayChildren: 0.3,
-        staggerChildren: 0.05,
-      },
-    },
-    closed: {
-      clipPath: "inset(10% 50% 90% 50%)",
-      transition: {
-        type: "spring",
-        bounce: 0,
-        duration: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    open: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring", stiffness: 300, damping: 24 },
-    },
-    closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
-  };
-
   return (
     <div className="fixed top-0 left-0 right-0 z-50 px-4 py-3">
       <div className="max-w-7xl mx-auto">
@@ -141,9 +112,9 @@ const Header: React.FC = () => {
             whileTap={{ scale: 0.95 }}
           >
             <img
-              src="./logo.png"
+              src="https://static.vecteezy.com/system/resources/previews/012/982/310/non_2x/chocolate-and-green-tea-logo-icon-free-png.png"
               alt="Unico dentals logo"
-              className="h-16 transition-all duration-300 ease-out"
+              className="h-12 transition-all duration-300 ease-out"
             />
           </motion.div>
 
@@ -152,32 +123,31 @@ const Header: React.FC = () => {
             style={{ scale: textSize }}
           >
             {navItems.map((item) => (
-              <motion.button
+              <Link
+                href={`/${item.id}`}
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-sm font-semibold text-white hover:font-bold transition-colors whitespace-nowrap"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className="text-sm font-semibold text-white hover:font-bold whitespace-nowrap hover:scale-110 transition-all duration-300 ease-out"
               >
                 {item.label}
-              </motion.button>
+              </Link>
             ))}
           </motion.nav>
 
           <div className="flex items-center space-x-4">
-            <motion.button
-              className={cn(
-                "text-sm font-medium px-6 py-2 rounded-full whitespace-nowrap transition-all duration-300 ease-out",
-                isScrolled
-                  ? "bg-[#375f39]/70 text-white"
-                  : "bg-[#375f39] text-white"
-              )}
-              style={{ scale: textSize }}
-              whileHover={{ scale: 1.05, backgroundColor: "#1D4ED8" }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Book Online
-            </motion.button>
+            <Link href="/contact">
+              <motion.button
+                className={cn(
+                  "text-sm font-medium px-6 py-2 rounded-full whitespace-nowrap hover:scale-110 hover:text-md transition-all duration-300 ease-out",
+                  isScrolled
+                    ? "bg-[#375f39]/70 text-white"
+                    : "bg-[#375f39] text-white"
+                )}
+                style={{ scale: textSize }}
+              >
+                Book Online
+              </motion.button>
+            </Link>
 
             <motion.button
               className="md:hidden text-white"

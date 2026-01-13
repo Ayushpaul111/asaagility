@@ -83,7 +83,7 @@ export default function RootLayout({
           {/* This wrapper is the "curtain" that contains all page content except the footer.
           It scrolls up to reveal the footer. */}
           <Navbar />
-          <div className="relative z-10 bg-[#F7F7F7] overflow-x-hidden rounded-b-3xl lg:rounded-b-[50px]">
+          <div className="relative z-10 bg-[#F7F7F7] text-gray-900 overflow-x-hidden rounded-b-3xl lg:rounded-b-[50px]">
             {children}
           </div>
           <Footer />

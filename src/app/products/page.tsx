@@ -1,5 +1,224 @@
+import { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Lithium Batteries for E-Rickshaw & E-Bikes | ASA Agility",
+  description:
+    "Premium lithium-ion batteries for e-rickshaws and e-bikes. High performance, long-lasting, eco-friendly battery solutions in Cooch Behar.",
+  keywords: [
+    "lithium battery for e-rickshaw",
+    "e-bike lithium battery",
+    "electric rickshaw battery",
+    "scooty battery",
+    "lithium ion battery Cooch Behar",
+    "toto battery",
+  ],
+};
+
+const ProductStatBlock = ({ image, specs, warranty, pricing, slug }: any) => {
+  return (
+    <div className="relative mx-auto max-w-300 px-4 sm:px-6">
+      {/* Desktop Layout (md and up) */}
+      <div className="hidden md:block py-20">
+        <div className="relative flex justify-center">
+          {/* Background shape */}
+          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-90 rounded-[56px] bg-[#DFFCF4]" />
+
+          {/* Product image */}
+          <img
+            src={image}
+            alt="Battery"
+            className="relative z-10 h-115 object-contain"
+          />
+
+          {/* Left card - Specifications */}
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 z-20">
+            <div className="w-60 rounded-[28px] bg-[#42F5C2] px-6 py-8">
+              <div className="text-[64px] font-light text-black leading-none">
+                {specs.voltage}
+              </div>
+              <div className="text-[40px] font-light text-black leading-none mt-1">
+                {specs.capacity}
+              </div>
+              <div className="mt-2 text-sm text-black/80">
+                Voltage / Capacity
+              </div>
+
+              <div className="mt-6 flex justify-center">
+                <div className="h-10 w-10 rounded-full bg-black flex items-center justify-center text-white text-xl">
+                  ⚡
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right card - Warranty & Action */}
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 z-20">
+            <div className="w-[240px] rounded-[28px] border border-gray-300 bg-white px-6 py-8">
+              <div className="text-[64px] font-light text-black leading-none">
+                {warranty}
+              </div>
+              <div className="mt-2 text-sm text-black/80">Year warranty</div>
+
+              <div className="mt-4 border-t border-gray-200 pt-4">
+                <div className="text-[28px] font-semibold text-black">
+                  ₹{pricing.toLocaleString()}
+                </div>
+                <div className="text-xs text-black/60 mt-1">Starting price</div>
+              </div>
+
+              <Link href={`/products/${slug}`}>
+                <div className="mt-6 flex justify-center">
+                  <div className="h-10 w-10 rounded-full bg-black hover:bg-gray-800 transition-colors flex items-center justify-center cursor-pointer">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      className="text-white"
+                    >
+                      <path
+                        d="M6 3L11 8L6 13"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Layout (below md) */}
+      <div className="md:hidden py-12">
+        {/* Image Section */}
+        <div className="relative mb-8">
+          <div className="relative bg-[#DFFCF4] rounded-[32px] py-12 flex justify-center">
+            <img
+              src={image}
+              alt="Battery"
+              className="h-[240px] object-contain"
+            />
+          </div>
+        </div>
+
+        {/* Cards Grid */}
+        <div className="grid grid-cols-2 gap-4">
+          {/* Specs Card */}
+          <div className="rounded-[24px] bg-[#42F5C2] px-5 py-6">
+            <div className="text-[36px] font-light text-black leading-none">
+              {specs.voltage}
+            </div>
+            <div className="text-[24px] font-light text-black leading-none mt-1">
+              {specs.capacity}
+            </div>
+            <div className="mt-2 text-xs text-black/80">Voltage / Capacity</div>
+
+            <div className="mt-4 flex justify-center">
+              <div className="h-8 w-8 rounded-full bg-black flex items-center justify-center text-white">
+                ⚡
+              </div>
+            </div>
+          </div>
+
+          {/* Warranty Card */}
+          <div className="rounded-[24px] border border-gray-300 bg-white px-5 py-6">
+            <div className="text-[36px] font-light text-black leading-none">
+              {warranty}
+            </div>
+            <div className="mt-2 text-xs text-black/80">Year warranty</div>
+
+            <div className="mt-3 border-t border-gray-200 pt-3">
+              <div className="text-[20px] font-semibold text-black">
+                ₹{pricing.toLocaleString()}
+              </div>
+              <div className="text-[10px] text-black/60 mt-1">
+                Starting price
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile CTA Button */}
+        <Link href={`/products/${slug}`}>
+          <div className="mt-6 bg-black text-white text-center py-4 rounded-full font-medium hover:bg-gray-800 transition-colors">
+            View details
+          </div>
+        </Link>
+      </div>
+    </div>
+  );
+};
+
 const Products = () => {
-  return <div className="bg-black text-6xl">Products</div>;
+  return (
+    <section className="bg-white min-h-screen pt-20">
+      {/* Header */}
+      <div className="max-w-[1200px] mx-auto px-6 pt-20">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-gray-900 leading-tight">
+          Our Batteries
+        </h1>
+        <p className="text-lg md:text-xl text-black/60 mt-4 max-w-2xl">
+          Professional lithium-ion battery solutions for electric vehicles.
+          Engineered for performance and reliability.
+        </p>
+      </div>
+
+      {/* E-Rickshaw Battery */}
+      <ProductStatBlock
+        image="https://pelostudio-storyblok-assets.b-cdn.net/f/236077/2032x1947/c11df9dd29/borne.png/m/smart/filters:quality(70)"
+        specs={{
+          voltage: "60V",
+          capacity: "100Ah",
+        }}
+        warranty={3}
+        pricing={45000}
+        slug="e-rickshaw-battery"
+      />
+
+      {/* E-Bike/Scooty Battery */}
+      <ProductStatBlock
+        image="https://pelostudio-storyblok-assets.b-cdn.net/f/236077/2032x1947/c11df9dd29/borne.png/m/smart/filters:quality(70)"
+        specs={{
+          voltage: "48V",
+          capacity: "30Ah",
+        }}
+        warranty={2}
+        pricing={18000}
+        slug="e-bike-scooty-battery"
+      />
+
+      {/* Footer CTA */}
+      <div className="max-w-[1200px] mx-auto px-6 py-20">
+        <div className="bg-black rounded-[40px] md:rounded-[56px] px-8 md:px-16 py-12 md:py-20 text-center">
+          <h2 className="text-[36px] md:text-[56px] font-light text-white leading-tight">
+            Need help choosing?
+          </h2>
+          <p className="text-lg md:text-xl text-white/80 mt-4">
+            Our experts are ready to assist you
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="tel:+919876543210"
+              className="inline-flex items-center justify-center gap-2 bg-white text-black px-8 py-4 rounded-full text-base font-medium hover:bg-gray-100 transition-colors"
+            >
+              <span>Call now</span>
+            </a>
+            <a
+              href="https://wa.me/919876543210"
+              className="inline-flex items-center justify-center gap-2 bg-[#42F5C2] text-black px-8 py-4 rounded-full text-base font-medium hover:bg-[#3DE5B5] transition-colors"
+            >
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Products;
