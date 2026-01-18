@@ -79,12 +79,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased text-black`}
       >
         {" "}
-        <div className="bg-[#141414]">
+        <div className="bg-[#141414] ">
           {/* This wrapper is the "curtain" that contains all page content except the footer.
           It scrolls up to reveal the footer. */}
           <Navbar />
           <div className="relative z-10 bg-[#F7F7F7] text-gray-900 overflow-x-hidden rounded-b-3xl lg:rounded-b-[50px]">
-            {children}
+            <div className="max-w-300 mx-auto">{children}</div>
           </div>
           <Footer />
         </div>

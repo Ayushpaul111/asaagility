@@ -98,7 +98,7 @@ const Header: React.FC = () => {
             "rounded-full py-3",
             "flex items-center justify-between",
             isScrolled
-              ? "bg-[#5C905E]/70 backdrop-blur-md border-white/20"
+              ? "bg-[#5C905E]/70 backdrop-blur-md border-black/60"
               : "bg-[#5C905E]",
             "shadow-lg",
             "border",
