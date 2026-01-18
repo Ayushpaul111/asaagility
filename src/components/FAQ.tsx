@@ -60,32 +60,44 @@ const FaqCard: React.FC<FaqCardProps> = ({ item }) => {
 const FAQ: React.FC = () => {
   const faqData = [
     {
-      question: "What is Popcorn?",
+      question: "Which battery is best for Toto (e-rickshaw)?",
       answer:
-        "Popcorn is a simple, all-in-one global phone plan that just works. Enjoy unlimited talk, text, and data worldwide for one price. No hidden fees, roaming charges or hassle.",
+        "The best battery for a Toto (e-rickshaw) depends on load capacity and daily running distance. High-cycle EV batteries designed for heavy daily usage offer better backup, longer life, and lower maintenance.",
     },
     {
-      question: "What countries are you available in?",
+      question: "Do you sell batteries only for Toto (e-rickshaw)?",
       answer:
-        "We’re live in 180+ countries. The only places we haven’t seen users are a few remote islands or unstable regions like North Korea.",
+        "Yes. We specialize in batteries for Toto (e-rickshaw), electric loaders, and electric bikes. We focus only on electric vehicle batteries.",
     },
     {
-      question: "Can I keep my current phone number?",
+      question: "Where can I buy Toto battery in Cooch Behar?",
       answer:
-        "Absolutely, we support US numbers and you can transfer yours directly in the app. Or grab a fresh one if you’d like.",
+        "You can buy Toto (e-rickshaw) batteries directly from our store in Cooch Behar. We provide local availability, fair pricing, and support.",
     },
     {
-      question: "Will it work on my phone?",
+      question: "How long does a Toto battery last?",
       answer:
-        "If your phone supports eSIM and is from the last 5 years, you’re good to go.",
+        "A Toto battery typically lasts 12–24 months depending on usage, load, charging habits, and road conditions. Proper charging and maintenance can increase battery life.",
     },
     {
-      question: "How much does it cost?",
-      answer: "$69/mo including taxes. That’s it.",
+      question: "What is the price of Toto battery in Cooch Behar?",
+      answer:
+        "Toto battery prices vary based on capacity and battery type. We offer reasonable and competitive pricing in Cooch Behar—contact us for the latest rates.",
     },
     {
-      question: "Can I cancel anytime?",
-      answer: "No contracts, just pay monthly and cancel anytime.",
+      question: "Is your Toto battery suitable for daily commercial use?",
+      answer:
+        "Yes. Our Toto batteries are designed for heavy daily commercial use, including passenger transport and goods movement.",
+    },
+    {
+      question: "Do you provide installation support for Toto batteries?",
+      answer:
+        "Yes. We provide guidance and support for proper installation of Toto (e-rickshaw) batteries to ensure safe and efficient operation.",
+    },
+    {
+      question: "Do you sell electric loader batteries in Cooch Behar?",
+      answer:
+        "Yes. Along with Toto batteries, we sell batteries for electric loaders and electric bikes in Cooch Behar.",
     },
   ];
 

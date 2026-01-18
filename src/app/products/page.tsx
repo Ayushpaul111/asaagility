@@ -20,7 +20,7 @@ const ProductStatBlock = ({ image, specs, warranty, pricing, slug }: any) => {
     <div className="relative mx-auto max-w-300 px-4 sm:px-6">
       {/* Desktop Layout (md and up) */}
       <div className="hidden md:block py-20">
-        <div className="relative flex justify-center">
+        <div className="relative flex justify-center hover:scale-102 transition-all group">
           {/* Background shape */}
           <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-90 rounded-[56px] bg-[#DFFCF4]" />
 
@@ -28,7 +28,7 @@ const ProductStatBlock = ({ image, specs, warranty, pricing, slug }: any) => {
           <img
             src={image}
             alt="Battery"
-            className="relative z-10 h-115 object-contain"
+            className="relative z-10 h-115 object-contain transition-all group-hover:scale-105"
           />
 
           {/* Left card - Specifications */}
@@ -158,7 +158,7 @@ const Products = () => {
   return (
     <section className="bg-white min-h-screen pt-20">
       {/* Header */}
-      <div className="max-w-[1200px] mx-auto px-6 pt-20">
+      <div className="max-w-300 mx-auto px-6 pt-20">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-gray-900 leading-tight">
           Our Batteries
         </h1>
@@ -193,7 +193,7 @@ const Products = () => {
       />
 
       {/* Footer CTA */}
-      <div className="max-w-[1200px] mx-auto px-6 py-20">
+      <div className="max-w-300 mx-auto px-6 py-20">
         <div className="bg-black rounded-[40px] md:rounded-[56px] px-8 md:px-16 py-12 md:py-20 text-center">
           <h2 className="text-[36px] md:text-[56px] font-light text-white leading-tight">
             Need help choosing?

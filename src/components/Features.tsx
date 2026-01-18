@@ -18,26 +18,20 @@ const Features: React.FC = () => {
           {/* Simple Card */}
           <div className="group bg-[#EBF6F2] rounded-3xl p-8 flex flex-col items-center text-center overflow-hidden">
             <div className="relative w-64 h-64 flex flex-col justify-center items-center mb-8">
-              <div className="absolute text-gray-500/80 transition-all duration-300 group-hover:-translate-y-5 group-hover:scale-90 group-hover:opacity-10">
-                Monthly fee
-              </div>
               <div className="text-7xl font-bold text-gray-900 transition-all duration-300 group-hover:-translate-y-9 group-hover:scale-90 group-hover:opacity-10">
-                $69
+                ₹₹₹
               </div>
 
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="bg-white/80 backdrop-blur-sm shadow-md rounded-full px-4 py-1.5 transition-transform duration-300 delay-100 group-hover:translate-y-0 translate-y-2">
-                  Calls & Text
+                <div className="bg-white/80 backdrop-blur-sm shadow-md rounded-xl italic px-4 py-1.5 transition-transform duration-300 delay-100 group-hover:translate-y-0 translate-y-2">
+                  E-Bikes Batteries
                 </div>
-                <div className="bg-white/80 backdrop-blur-sm shadow-md rounded-full px-4 py-1.5 transition-transform duration-300 delay-200 group-hover:translate-y-0 translate-y-2">
-                  Unlimited Data
-                </div>
-                <div className="bg-white/80 backdrop-blur-sm shadow-md rounded-full px-4 py-1.5 transition-transform duration-300 delay-300 group-hover:translate-y-0 translate-y-2">
-                  Roaming
+                <div className="bg-white/80 backdrop-blur-sm shadow-md rounded-xl italic px-4 py-1.5 transition-transform duration-300 delay-200 group-hover:translate-y-0 translate-y-2">
+                  E-Rickshaw Batteries
                 </div>
               </div>
 
-              <div className="absolute bottom-10 rainbow-gradient rounded-full px-3 py-1 text-sm font-semibold flex items-center space-x-1 opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+              {/* <div className="absolute bottom-10 rainbow-gradient rounded-xl italic px-3 py-1 text-sm font-semibold flex items-center space-x-1 opacity-100 group-hover:opacity-0 transition-opacity duration-300">
                 <svg
                   width="16"
                   height="16"
@@ -55,17 +49,15 @@ const Features: React.FC = () => {
                   />
                 </svg>
                 <span>All inclusive</span>
-              </div>
+              </div> */}
             </div>
             <h3 className="text-2xl font-semibold text-gray-900 mb-2">
-              Simple
+              Pricing
             </h3>
-            <p className="text-gray-600">
-              A predictable phone plan without costly roaming fees.
-            </p>
+            <p className="text-gray-600">Smart power. Smart pricing.</p>
           </div>
 
-          {/* Fast & Easy Card */}
+          {/* Fast & Easy Battery */}
           <div className="group bg-[#E5EFF8] rounded-3xl p-8 flex flex-col items-center text-center overflow-hidden">
             <div className="relative w-64 h-64 flex justify-center items-center mb-8">
               <img
@@ -83,12 +75,9 @@ const Features: React.FC = () => {
               </div>
             </div>
             <h3 className="text-2xl font-semibold text-gray-900 mb-2">
-              Fast & Easy
+              Reliableily
             </h3>
-            <p className="text-gray-600">
-              Get started in minutes. Just scan a QR code and you’re ready to
-              go.
-            </p>
+            <p className="text-gray-600">Power you can depend on.</p>
           </div>
 
           {/* Expat Friendly Card */}
@@ -98,7 +87,7 @@ const Features: React.FC = () => {
               <div className="absolute w-40 h-48 bg-white rounded-2xl shadow-lg transition-transform duration-300 group-hover:-translate-x-12 group-hover:-translate-y-8 group-hover:rotate-[-10deg]" />
 
               {/* Back Right Card - Empty for visual effect */}
-              <div className="absolute w-40 h-48 bg-white rounded-2xl shadow-lg transition-transform duration-300 group-hover:translate-x-12 group-hover:-translate-y-8 group-hover:rotate-10`" />
+              <div className="absolute w-40 h-48 bg-white rounded-2xl shadow-lg transition-transform duration-300 group-hover:translate-x-12 group-hover:-translate-y-8 group-hover:rotate-[10deg]" />
 
               {/* Front Card - Only visible card with content */}
               <div className="absolute w-48 h-56 bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center justify-center z-10 transition-transform duration-300 group-hover:scale-110">
