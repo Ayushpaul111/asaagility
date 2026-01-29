@@ -102,21 +102,23 @@ const Header: React.FC = () => {
               : "bg-[#5C905E]",
             "shadow-lg",
             "border",
-            "transition-all duration-300 ease-out"
+            "transition-all duration-300 ease-out",
           )}
         >
-          <motion.div
-            className="flex items-center"
-            style={{ scale: logoScale }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <img
-              src="https://static.vecteezy.com/system/resources/previews/012/982/310/non_2x/chocolate-and-green-tea-logo-icon-free-png.png"
-              alt="Unico dentals logo"
-              className="h-12 transition-all duration-300 ease-out"
-            />
-          </motion.div>
+          <Link href="/">
+            <motion.div
+              className="flex items-center"
+              style={{ scale: logoScale }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <img
+                src="https://static.vecteezy.com/system/resources/previews/012/982/310/non_2x/chocolate-and-green-tea-logo-icon-free-png.png"
+                alt="Unico dentals logo"
+                className="h-12 transition-all duration-300 ease-out"
+              />
+            </motion.div>
+          </Link>
 
           <motion.nav
             className="hidden md:flex items-center space-x-8"
@@ -141,7 +143,7 @@ const Header: React.FC = () => {
                   "text-sm font-medium px-6 py-2 rounded-full whitespace-nowrap hover:scale-110 hover:text-md transition-all duration-300 ease-out",
                   isScrolled
                     ? "bg-[#375f39]/70 text-white"
-                    : "bg-[#375f39] text-white"
+                    : "bg-[#375f39] text-white",
                 )}
                 style={{ scale: textSize }}
               >
@@ -167,21 +169,23 @@ const Header: React.FC = () => {
           <AnimatePresence>
             {isMenuOpen && (
               <motion.div
-                initial="closed"
-                animate="open"
-                exit="closed"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.2 }}
                 className="absolute top-full left-4 right-4 mt-2 bg-white rounded-2xl shadow-lg md:hidden"
                 data-menu-dropdown
               >
                 <nav className="flex flex-col p-4">
                   {navItems.map((item) => (
-                    <motion.button
+                    <Link
                       key={item.id}
-                      onClick={() => scrollToSection(item.id)}
-                      className="py-2 text-sm font-medium text-gray-700 hover:text-blue-600"
+                      href={`/${item.id}`}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="py-3 text-sm font-medium text-gray-700 hover:text-[#5C905E] transition-colors"
                     >
                       {item.label}
-                    </motion.button>
+                    </Link>
                   ))}
                 </nav>
               </motion.div>

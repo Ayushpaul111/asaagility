@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   authors: [{ name: "ASA Agility" }],
   creator: "ASA Agility",
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://www.asaagility.com"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.asaagility.com",
   ),
   openGraph: {
     type: "website",
@@ -84,7 +84,7 @@ export default function RootLayout({
           It scrolls up to reveal the footer. */}
           <Navbar />
           <div className="relative z-10 bg-[#F7F7F7] text-gray-900 overflow-x-hidden rounded-b-3xl lg:rounded-b-[50px]">
-            <div className="max-w-300 mx-auto">{children}</div>
+            {children}
           </div>
           <Footer />
         </div>

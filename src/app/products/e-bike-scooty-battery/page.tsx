@@ -19,7 +19,7 @@ const EBikeBattery = () => {
     <ProductDetail
       name="E-Bike & Scooty Lithium Battery"
       description="Lightweight and efficient 48V 30Ah lithium-ion battery perfect for e-bikes and scooties. Ideal for daily commuting with excellent range and quick charging."
-      image="https://pelostudio-storyblok-assets.b-cdn.net/f/236077/2032x1947/c11df9dd29/borne.png/m/smart/filters:quality(70)"
+      image="https://ruchiragreenearth.com/img/e-rickshaw-battery.png"
       voltage="48V"
       capacity="30Ah"
       warranty={2}

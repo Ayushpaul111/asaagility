@@ -32,16 +32,16 @@ const ProductCard = ({
       <div
         className={`group cursor-pointer ${
           isEven ? "md:flex-row" : "md:flex-row-reverse"
-        } flex flex-col md:flex gap-8 items-center py-16 border-b border-black/10 hover:bg-black/[0.01] transition-all`}
+        } flex flex-col md:flex gap-8 items-center py-16 border-t border-black/10 hover:bg-black/1 transition-all`}
       >
         {/* Image Side */}
         <div className="md:w-1/2">
           <div className="relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-black/[0.02] to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-br from-black/2 to-transparent" />
             <img
               src={image}
               alt={title}
-              className="w-full h-[400px] object-contain transform group-hover:scale-105 transition-transform duration-500"
+              className="w-full h-100 object-contain transform group-hover:scale-105 transition-transform duration-500"
             />
           </div>
         </div>
@@ -49,7 +49,7 @@ const ProductCard = ({
         {/* Content Side */}
         <div className="md:w-1/2 space-y-6">
           <div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-2 group-hover:translate-x-2 transition-transform">
+            <h2 className="text-4xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-2 group-hover:translate-x-2 transition-transform">
               {title}
             </h2>
             <div className="w-16 h-1 bg-black" />
@@ -73,7 +73,7 @@ const ProductCard = ({
 
           {/* Pricing */}
           <div className="flex items-baseline gap-3">
-            <span className="text-4xl font-bold">
+            <span className="text-3xl font-bold">
               ₹{pricing.toLocaleString()}
             </span>
             <span className="text-black/40 uppercase text-sm">
@@ -104,7 +104,7 @@ const ProductCard = ({
 const Products = () => {
   const products = [
     {
-      title: "E-Rickshaw",
+      title: "E-Rickshaw Battery",
       image:
         "https://pelostudio-storyblok-assets.b-cdn.net/f/236077/2032x1947/c11df9dd29/borne.png/m/smart/filters:quality(70)",
       specs: { voltage: "60V", capacity: "100Ah" },
@@ -113,18 +113,16 @@ const Products = () => {
       slug: "e-rickshaw-battery",
     },
     {
-      title: "E-Loader",
-      image:
-        "https://pelostudio-storyblok-assets.b-cdn.net/f/236077/2032x1947/c11df9dd29/borne.png/m/smart/filters:quality(70)",
+      title: "E-Loader Battery",
+      image: "https://ruchiragreenearth.com/img/e-rickshaw-battery.png",
       specs: { voltage: "72V", capacity: "120Ah" },
       warranty: 3,
       pricing: 65000,
       slug: "e-loader-battery",
     },
     {
-      title: "E-Bike & Scooty",
-      image:
-        "https://pelostudio-storyblok-assets.b-cdn.net/f/236077/2032x1947/c11df9dd29/borne.png/m/smart/filters:quality(70)",
+      title: "E-Bike & Scooty Battery",
+      image: "https://ruchiragreenearth.com/img/e-rickshaw-battery.png",
       specs: { voltage: "48V", capacity: "30Ah" },
       warranty: 2,
       pricing: 18000,
@@ -133,9 +131,9 @@ const Products = () => {
   ];
 
   return (
-    <section className="min-h-screen">
+    <section className="min-h-screen max-w-300  mx-auto ">
       {/* Hero Header */}
-      <div className="max-w-7xl mx-auto px-6 pt-32 pb-20">
+      <div className="px-6 pt-32 pb-20">
         <div className="max-w-4xl">
           <div className="text-sm uppercase tracking-widest text-black/40 mb-6">
             Our Products
