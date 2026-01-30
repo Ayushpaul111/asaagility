@@ -216,13 +216,13 @@ const Products = () => {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:+919876543210"
+              href="tel:+919434338205"
               className="inline-flex items-center justify-center gap-2 bg-white text-black px-8 py-4 rounded-full text-base font-medium hover:bg-gray-100 transition-colors"
             >
               <span>Call now</span>
             </a>
             <a
-              href="https://wa.me/919876543210"
+              href="https://wa.me/919434338205"
               className="inline-flex items-center justify-center gap-2 bg-[#42F5C2] text-black px-8 py-4 rounded-full text-base font-medium hover:bg-[#3DE5B5] transition-colors"
             >
               <span>WhatsApp</span>

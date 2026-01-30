@@ -105,8 +105,7 @@ const Products = () => {
   const products = [
     {
       title: "E-Rickshaw Battery",
-      image:
-        "https://pelostudio-storyblok-assets.b-cdn.net/f/236077/2032x1947/c11df9dd29/borne.png/m/smart/filters:quality(70)",
+      image: "https://ruchiragreenearth.com/img/e-rickshaw-battery.png",
       specs: { voltage: "60V", capacity: "100Ah" },
       warranty: 3,
       pricing: 45000,
@@ -122,7 +121,8 @@ const Products = () => {
     },
     {
       title: "E-Bike & Scooty Battery",
-      image: "https://ruchiragreenearth.com/img/e-rickshaw-battery.png",
+      image:
+        "https://vigorvolt.com/wp-content/uploads/2025/09/12v-32ah-battery.png",
       specs: { voltage: "48V", capacity: "30Ah" },
       warranty: 2,
       pricing: 18000,
@@ -150,14 +150,14 @@ const Products = () => {
       </div>
 
       {/* Products Grid */}
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="px-6">
         {products.map((product, index) => (
           <ProductCard key={product.slug} {...product} index={index} />
         ))}
       </div>
 
       {/* Footer CTA */}
-      <div className="max-w-7xl mx-auto px-6 py-32">
+      <div className="px-6 pb-20">
         <div className="border-t border-black/10 pt-20">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -171,13 +171,13 @@ const Products = () => {
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:+919876543210"
+                href="tel:+919434338205"
                 className="flex-1 bg-black text-white text-center py-5 font-semibold hover:bg-black/90 transition-colors"
               >
                 Call Now
               </a>
               <a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/919434338205"
                 className="flex-1 border-2 border-black text-black text-center py-5 font-semibold hover:bg-black hover:text-white transition-colors"
               >
                 WhatsApp

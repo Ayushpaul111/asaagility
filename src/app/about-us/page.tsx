@@ -7,22 +7,8 @@ const about = () => {
   return (
     <>
       <section className="relative w-full min-h-screen bg-[#f5f5f0] px-6 md:px-12 lg:px-20 pt-24 pb-16 max-w-300 mx-auto">
-        {/* Header Navigation Hint */}
-        <div className="absolute top-8 left-1/2 -translate-x-1/2 text-center">
-          <p className="text-[10px] md:text-xs tracking-[0.2em] text-gray-600 font-light">
-            READY TO BRING YOU THE BEST
-            <br />
-            HONEST REAL IDEAS
-          </p>
-        </div>
-
-        {/* Menu Button - Top Right */}
-        <button className="absolute top-8 right-8 text-sm tracking-wider font-light hover:opacity-70 transition-opacity">
-          MENU
-        </button>
-
         {/* Main Content Container */}
-        <div className="max-w-7xl mx-auto pt-12">
+        <div className="max-w-300 mx-auto pt-12">
           {/* Large ABOUT US Heading */}
           <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight mb-16 md:mb-20">
             ABOUT US
@@ -102,15 +88,13 @@ const about = () => {
                     throughout your buying or selling process.
                   </p>
                 </div>
-
-                <p className="text-xs text-gray-500 mt-8">© Why choose us</p>
               </div>
             </div>
           </div>
         </div>
       </section>
       <section className="relative w-full bg-[#f5f5f0] py-8 md:py-12">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div className="max-w-300 mx-auto px-6 md:px-12 lg:px-20">
           {/* "Why choose us" text */}
           <p className="text-xs text-gray-500 mb-4">© Why choose us</p>
 
@@ -126,7 +110,7 @@ const about = () => {
                     alt="Modern architecture"
                     className="w-full h-full object-cover opacity-60"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-transparent"></div>
+                  <div className="absolute inset-0 bg-linear-to-br from-black/60 via-black/40 to-transparent"></div>
                 </div>
 
                 {/* Content */}
@@ -241,7 +225,7 @@ const about = () => {
         </div>
       </section>
       <section className="relative w-full bg-[#f5f5f0] px-6 md:px-12 lg:px-20 py-20 md:py-32">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-300 mx-auto">
           {/* Stats Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
             {stats.map((stat, index) => (
@@ -258,7 +242,7 @@ const about = () => {
         </div>
       </section>
       <section className="relative w-full bg-[#f5f5f0] px-6 md:px-12 lg:px-20 py-16 md:py-24">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-300 mx-auto">
           {/* Section Title */}
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-16 md:mb-24">
             Meet the{" "}

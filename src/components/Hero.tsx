@@ -15,12 +15,12 @@ const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 relative">
         <div className="relative inline-block mb-8 animate-fade-in animation-delay-100">
           <div className="absolute -inset-2 rounded-full opacity-60 blur-md"></div>
-          <a
+          {/* <a
             href="#"
             className="relative bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-full px-4 py-1.5 text-sm text-gray-700/80 "
           >
             <strong>Trust Worthy</strong>
-          </a>
+          </a> */}
         </div>
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-gray-900 leading-tight animate-fade-in-up animation-delay-200">

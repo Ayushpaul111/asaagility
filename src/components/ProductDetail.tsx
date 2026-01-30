@@ -31,7 +31,7 @@ const ProductDetail = ({
   return (
     <div className="min-h-screen max-w-300 pt-32 mx-auto">
       {/* Navigation */}
-      <div className="max-w-300 mx-auto px-6 py-6">
+      <div className="max-w-300 mx-auto px-6">
         <Link
           href="/products"
           className="inline-flex items-center gap-2 text-gray-500 hover:text-black transition-colors text-sm uppercase tracking-wider"
@@ -52,15 +52,14 @@ const ProductDetail = ({
 
       {/* Hero Section */}
       <section className="relative overflow-hidden">
-        <div className="max-w-300 mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+        <div className="max-w-300 mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-20 lg:pt-8 lg:pb-28">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left — Editorial Content */}
             <div className="space-y-10">
-              <div className="space-y-5">
+              <div className="space-y-6">
                 <h1 className="text-[clamp(3rem,6vw,5.5rem)] font-extrabold tracking-tight leading-[0.9] text-black">
                   {name}
                 </h1>
-
                 <p className="text-lg text-black/60 max-w-lg">{description}</p>
               </div>
 
@@ -81,13 +80,13 @@ const ProductDetail = ({
               {/* CTAs */}
               <div className="flex flex-wrap gap-4 pt-4">
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919434338205"
                   className="px-8 py-4 bg-black text-white font-semibold hover:bg-black/90 transition"
                 >
                   Call to Order
                 </a>
                 <a
-                  href="https://wa.me/919876543210"
+                  href="https://wa.me/919434338205"
                   className="px-8 py-4 border border-black text-black font-semibold hover:bg-black/5 transition"
                 >
                   WhatsApp
@@ -189,13 +188,13 @@ const ProductDetail = ({
           </p>
           <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
             <a
-              href="tel:+919876543210"
+              href="tel:+919434338205"
               className="flex-1 bg-black text-white text-center py-4 font-semibold hover:bg-black/90 transition-colors"
             >
               Call Now
             </a>
             <a
-              href="https://wa.me/919876543210"
+              href="https://wa.me/919434338205"
               className="flex-1 border border-black/20 text-black text-center py-4 font-semibold hover:bg-black/5 transition-colors"
             >
               WhatsApp
