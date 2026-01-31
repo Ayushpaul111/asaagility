@@ -58,8 +58,8 @@ const DesktopNavItem = memo(function DesktopNavItem({
         )}
       />
 
-      {/* Hover underline - pure CSS */}
-      <span className="absolute -bottom-1 left-0 h-0.5 bg-white/50 rounded-full w-0 group-hover:w-full transition-all duration-300" />
+      {/* Hover underline - CSS */}
+      <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-0.5 bg-white/50 rounded-full w-0 group-hover:w-full transition-all duration-300" />
     </Link>
   );
 });
@@ -288,7 +288,7 @@ const Header: React.FC = () => {
             >
               <img
                 src="https://static.vecteezy.com/system/resources/previews/012/982/310/non_2x/chocolate-and-green-tea-logo-icon-free-png.png"
-                alt="Unico dentals logo"
+                alt="Asaagility-logo"
                 className="h-12"
                 loading="eager"
                 decoding="async"

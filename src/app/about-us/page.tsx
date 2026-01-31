@@ -247,9 +247,13 @@ const about = () => {
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-16 md:mb-24">
             Meet the{" "}
             <span className="relative inline-block">
-              Founders
+              Founder
               {/* Blue underline */}
-              <span className="absolute bottom-0 left-0 w-full h-2 md:h-3 bg-green-600"></span>
+              <div className="-rotate-1">
+                <span className="absolute bottom-1 left-0 w-full h-0.5 bg-green-600 rounded-3xl"></span>
+                <span className="absolute bottom-0 left-0 -rotate-1 w-full h-1 md:h-1 bg-green-600 rounded-3xl"></span>
+                <span className="absolute -bottom-0.5 left-0 w-full h-0.5 bg-green-600 rounded-3xl"></span>
+              </div>
             </span>
           </h2>
 
@@ -264,7 +268,7 @@ const about = () => {
               </div>
               <div className="pt-4">
                 <h4 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-4">
-                  Viktor Sanjaya
+                  Amit Dhar
                 </h4>
                 <p className="text-sm md:text-base text-gray-600 leading-relaxed">
                   an{" "}

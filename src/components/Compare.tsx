@@ -1,480 +1,120 @@
 "use client";
 
-import { useState } from "react";
+import { SVGProps } from "react";
+import {
+  ERickshawIcon,
+  ELoaderIcon,
+  EBikeIcon,
+  OtherIcon,
+} from "@/components/icons/ContactIcons";
 
 // ============================================
 // TYPES
 // ============================================
 
-type VehicleType = "e-rickshaw" | "e-loader" | "e-bike" | "e-scooty";
+interface IconProps extends SVGProps<SVGSVGElement> {
+  className?: string;
+}
 
-interface Vehicle {
-  id: VehicleType;
+interface VehicleOption {
   name: string;
   subtitle: string;
+  icon: React.FC<IconProps>;
 }
 
-interface PlanFeature {
-  name: string;
+interface ComparisonFeature {
+  category?: string;
+  feature: string;
   subtext?: string;
-  economy: string | boolean;
-  comfort: string | boolean;
-  premium: string | boolean;
-}
-
-interface FeatureSection {
-  title: string;
-  features: PlanFeature[];
+  sanaka: string | boolean;
+  normal: string | boolean;
 }
 
 // ============================================
-// DATA
+// VEHICLE OPTIONS (Display Only)
 // ============================================
 
-const vehicles: Vehicle[] = [
-  { id: "e-rickshaw", name: "E-Rickshaw", subtitle: "Passenger Vehicle" },
-  { id: "e-loader", name: "E-Loader", subtitle: "Cargo Vehicle" },
-  { id: "e-bike", name: "E-Bike", subtitle: "Two Wheeler" },
-  { id: "e-scooty", name: "E-Scooty", subtitle: "Two Wheeler" },
-];
-
-const plans = [
+const vehicleOptions: VehicleOption[] = [
   {
-    name: "Economy",
-    description: "Basic solution for daily commuters",
-    buttonStyle: "outline" as const,
+    name: "E-Rickshaw",
+    subtitle: "Passenger Vehicle",
+    icon: ERickshawIcon,
   },
   {
-    name: "Comfort",
-    description: "The best combination of price and performance",
-    buttonStyle: "outline" as const,
+    name: "E-Loader",
+    subtitle: "Cargo Vehicle",
+    icon: ELoaderIcon,
   },
   {
-    name: "Premium",
-    description: "Complete solution with all features included",
-    buttonStyle: "filled" as const,
-  },
-];
-
-const featureSections: FeatureSection[] = [
-  {
-    title: "Battery Specifications",
-    features: [
-      {
-        name: "Battery Capacity",
-        economy: "48V 100Ah",
-        comfort: "48V 120Ah",
-        premium: "48V 150Ah",
-      },
-      {
-        name: "Warranty Period",
-        economy: "36 months",
-        comfort: "48 months",
-        premium: "60 months",
-      },
-      {
-        name: "Cycle Life",
-        economy: "1500 cycles",
-        comfort: "2000 cycles",
-        premium: "2500 cycles",
-      },
-      {
-        name: "Fast Charging",
-        subtext: "0-80% charge time",
-        economy: false,
-        comfort: "4 hours",
-        premium: "3 hours",
-      },
-    ],
+    name: "E-Bike",
+    subtitle: "Two Wheeler",
+    icon: EBikeIcon,
   },
   {
-    title: "Smart Features",
-    features: [
-      {
-        name: "GPS Tracking",
-        economy: false,
-        comfort: true,
-        premium: true,
-      },
-      {
-        name: "Bluetooth Connectivity",
-        economy: false,
-        comfort: true,
-        premium: true,
-      },
-      {
-        name: "Mobile App",
-        subtext: "Real-time monitoring",
-        economy: false,
-        comfort: "Basic",
-        premium: "Advanced",
-      },
-      {
-        name: "Remote ON-OFF",
-        economy: false,
-        comfort: false,
-        premium: true,
-      },
-      {
-        name: "Anti-theft Alert",
-        economy: false,
-        comfort: false,
-        premium: true,
-      },
-    ],
-  },
-  {
-    title: "Support & Service",
-    features: [
-      {
-        name: "On-site Support",
-        economy: false,
-        comfort: true,
-        premium: true,
-      },
-      {
-        name: "Replacement Guarantee",
-        economy: "6 months",
-        comfort: "12 months",
-        premium: "24 months",
-      },
-      {
-        name: "Free Health Checkup",
-        subtext: "Per year",
-        economy: "1 time",
-        comfort: "2 times",
-        premium: "4 times",
-      },
-    ],
+    name: "E-Scooty",
+    subtitle: "Two Wheeler",
+    icon: OtherIcon,
   },
 ];
 
 // ============================================
-// VEHICLE ICONS (Simple line art style)
+// COMPARISON DATA
 // ============================================
 
-const ERickshawIcon = ({ className }: { className?: string }) => (
-  <svg
-    viewBox="0 0 200 100"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-  >
-    {/* Body */}
-    <rect
-      x="30"
-      y="25"
-      width="100"
-      height="45"
-      rx="4"
-      stroke="#9CA3AF"
-      strokeWidth="1.5"
-      fill="none"
-    />
-    {/* Roof */}
-    <path
-      d="M35 25V15C35 12 38 10 42 10H120C124 10 127 12 127 15V25"
-      stroke="#9CA3AF"
-      strokeWidth="1.5"
-      fill="none"
-    />
-    {/* Windows */}
-    <rect
-      x="40"
-      y="30"
-      width="25"
-      height="20"
-      rx="2"
-      stroke="#9CA3AF"
-      strokeWidth="1"
-      fill="none"
-    />
-    <rect
-      x="70"
-      y="30"
-      width="25"
-      height="20"
-      rx="2"
-      stroke="#9CA3AF"
-      strokeWidth="1"
-      fill="none"
-    />
-    <rect
-      x="100"
-      y="30"
-      width="20"
-      height="20"
-      rx="2"
-      stroke="#9CA3AF"
-      strokeWidth="1"
-      fill="none"
-    />
-    {/* Handle */}
-    <path
-      d="M130 40H160C165 40 168 43 168 48V60"
-      stroke="#9CA3AF"
-      strokeWidth="1.5"
-      fill="none"
-    />
-    {/* Wheels */}
-    <circle
-      cx="50"
-      cy="75"
-      r="12"
-      stroke="#9CA3AF"
-      strokeWidth="1.5"
-      fill="none"
-    />
-    <circle cx="50" cy="75" r="4" fill="#9CA3AF" />
-    <circle
-      cx="110"
-      cy="75"
-      r="12"
-      stroke="#9CA3AF"
-      strokeWidth="1.5"
-      fill="none"
-    />
-    <circle cx="110" cy="75" r="4" fill="#9CA3AF" />
-    <circle
-      cx="168"
-      cy="75"
-      r="10"
-      stroke="#9CA3AF"
-      strokeWidth="1.5"
-      fill="none"
-    />
-    <circle cx="168" cy="75" r="3" fill="#9CA3AF" />
-  </svg>
-);
-
-const ELoaderIcon = ({ className }: { className?: string }) => (
-  <svg
-    viewBox="0 0 200 100"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-  >
-    {/* Cargo bed */}
-    <rect
-      x="20"
-      y="30"
-      width="110"
-      height="40"
-      rx="3"
-      stroke="#9CA3AF"
-      strokeWidth="1.5"
-      fill="none"
-    />
-    {/* Cargo lines */}
-    <line x1="35" y1="45" x2="115" y2="45" stroke="#9CA3AF" strokeWidth="1" />
-    <line x1="35" y1="55" x2="115" y2="55" stroke="#9CA3AF" strokeWidth="1" />
-    {/* Cabin */}
-    <path
-      d="M130 35H155C162 35 168 41 168 48V70H130V35Z"
-      stroke="#9CA3AF"
-      strokeWidth="1.5"
-      fill="none"
-    />
-    {/* Window */}
-    <rect
-      x="138"
-      y="42"
-      width="22"
-      height="15"
-      rx="2"
-      stroke="#9CA3AF"
-      strokeWidth="1"
-      fill="none"
-    />
-    {/* Wheels */}
-    <circle
-      cx="50"
-      cy="78"
-      r="12"
-      stroke="#9CA3AF"
-      strokeWidth="1.5"
-      fill="none"
-    />
-    <circle cx="50" cy="78" r="4" fill="#9CA3AF" />
-    <circle
-      cx="155"
-      cy="78"
-      r="12"
-      stroke="#9CA3AF"
-      strokeWidth="1.5"
-      fill="none"
-    />
-    <circle cx="155" cy="78" r="4" fill="#9CA3AF" />
-  </svg>
-);
-
-const EBikeIcon = ({ className }: { className?: string }) => (
-  <svg
-    viewBox="0 0 200 100"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-  >
-    {/* Back wheel */}
-    <circle
-      cx="50"
-      cy="65"
-      r="22"
-      stroke="#9CA3AF"
-      strokeWidth="1.5"
-      fill="none"
-    />
-    <circle
-      cx="50"
-      cy="65"
-      r="8"
-      stroke="#9CA3AF"
-      strokeWidth="1"
-      fill="none"
-    />
-    {/* Front wheel */}
-    <circle
-      cx="150"
-      cy="65"
-      r="22"
-      stroke="#9CA3AF"
-      strokeWidth="1.5"
-      fill="none"
-    />
-    <circle
-      cx="150"
-      cy="65"
-      r="8"
-      stroke="#9CA3AF"
-      strokeWidth="1"
-      fill="none"
-    />
-    {/* Frame */}
-    <path
-      d="M50 65L85 35L120 35L150 65"
-      stroke="#9CA3AF"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      fill="none"
-    />
-    <path
-      d="M85 35L100 65L120 35"
-      stroke="#9CA3AF"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      fill="none"
-    />
-    {/* Seat */}
-    <path
-      d="M75 30H95"
-      stroke="#9CA3AF"
-      strokeWidth="4"
-      strokeLinecap="round"
-    />
-    {/* Handle */}
-    <path
-      d="M120 35V22"
-      stroke="#9CA3AF"
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
-    <path
-      d="M112 18H128"
-      stroke="#9CA3AF"
-      strokeWidth="3"
-      strokeLinecap="round"
-    />
-    {/* Battery */}
-    <rect
-      x="88"
-      y="45"
-      width="24"
-      height="12"
-      rx="2"
-      fill="#9CA3AF"
-      fillOpacity="0.3"
-      stroke="#9CA3AF"
-      strokeWidth="1"
-    />
-  </svg>
-);
-
-const EScootyIcon = ({ className }: { className?: string }) => (
-  <svg
-    viewBox="0 0 200 100"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-  >
-    {/* Back wheel */}
-    <circle
-      cx="45"
-      cy="70"
-      r="18"
-      stroke="#9CA3AF"
-      strokeWidth="1.5"
-      fill="none"
-    />
-    <circle cx="45" cy="70" r="6" fill="#9CA3AF" />
-    {/* Front wheel */}
-    <circle
-      cx="155"
-      cy="70"
-      r="18"
-      stroke="#9CA3AF"
-      strokeWidth="1.5"
-      fill="none"
-    />
-    <circle cx="155" cy="70" r="6" fill="#9CA3AF" />
-    {/* Body */}
-    <path
-      d="M45 55C45 55 50 40 70 35H130C140 35 145 40 148 50L155 55"
-      stroke="#9CA3AF"
-      strokeWidth="2"
-      fill="none"
-      strokeLinecap="round"
-    />
-    {/* Seat */}
-    <path
-      d="M60 35H100"
-      stroke="#9CA3AF"
-      strokeWidth="6"
-      strokeLinecap="round"
-    />
-    {/* Front */}
-    <path
-      d="M148 50V25"
-      stroke="#9CA3AF"
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
-    <path
-      d="M140 20H156"
-      stroke="#9CA3AF"
-      strokeWidth="3"
-      strokeLinecap="round"
-    />
-    {/* Footrest */}
-    <path
-      d="M70 55H130"
-      stroke="#9CA3AF"
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
-  </svg>
-);
-
-const vehicleIcons: Record<VehicleType, React.FC<{ className?: string }>> = {
-  "e-rickshaw": ERickshawIcon,
-  "e-loader": ELoaderIcon,
-  "e-bike": EBikeIcon,
-  "e-scooty": EScootyIcon,
-};
+const comparisonData: ComparisonFeature[] = [
+  {
+    category: "Specifications",
+    feature: "No. of battery",
+    sanaka: "Only 1",
+    normal: "4 nos.",
+  },
+  {
+    feature: "Weight",
+    sanaka: "Only 48 kg",
+    normal: "130 kg",
+  },
+  {
+    feature: "Mileage",
+    sanaka: "Up to 120 km",
+    normal: "40 – 70 km",
+  },
+  {
+    category: "Cost & Maintenance",
+    feature: "Electric bills",
+    subtext: "Per charge",
+    sanaka: "Up to 6 units only",
+    normal: "8 – 10 units",
+  },
+  {
+    feature: "Warranty",
+    sanaka: "60 months",
+    normal: "6 – 18 months only",
+  },
+  {
+    feature: "Maintenance",
+    sanaka: '"Zero" maintenance',
+    normal: "Rs. 50 per week",
+  },
+  {
+    category: "Smart Features",
+    feature: "GPS",
+    sanaka: true,
+    normal: false,
+  },
+  {
+    feature: "Bluetooth",
+    sanaka: true,
+    normal: false,
+  },
+  {
+    feature: "Remote ON-OFF",
+    sanaka: true,
+    normal: false,
+  },
+];
 
 // ============================================
-// HELPER COMPONENTS
+// ICON COMPONENTS
 // ============================================
 
 const CheckIcon = ({ className }: { className?: string }) => (
@@ -497,22 +137,117 @@ const CrossIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-const renderCellValue = (value: string | boolean) => {
+const ArrowIcon = ({ className }: { className?: string }) => (
+  <svg
+    className={className}
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={2}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M17 8l4 4m0 0l-4 4m4-4H3"
+    />
+  </svg>
+);
+
+// ============================================
+// VALUE DISPLAY COMPONENT
+// ============================================
+
+const ValueDisplay = ({
+  value,
+  isHighlight,
+  size = "normal",
+}: {
+  value: string | boolean;
+  isHighlight?: boolean;
+  size?: "small" | "normal";
+}) => {
+  const iconSize = size === "small" ? "w-3.5 h-3.5" : "w-4 h-4";
+  const textSize = size === "small" ? "text-xs" : "text-xs sm:text-sm";
+  const gap = size === "small" ? "gap-1" : "gap-1.5";
+
   if (typeof value === "boolean") {
     return value ? (
-      <div className="flex items-center justify-center gap-1.5">
-        <CheckIcon className="w-4 h-4 text-blue-600" />
+      <div className={`flex items-center ${gap}`}>
+        <CheckIcon className={`${iconSize} text-green-600 flex-shrink-0`} />
+        <span className={`text-gray-700 ${textSize}`}>Yes</span>
       </div>
     ) : (
-      <div className="flex items-center justify-center">
-        <CrossIcon className="w-4 h-4 text-gray-300" />
+      <div className={`flex items-center ${gap}`}>
+        <CrossIcon className={`${iconSize} text-red-400 flex-shrink-0`} />
+        <span className={`text-gray-400 ${textSize}`}>No</span>
       </div>
     );
   }
+
   return (
-    <div className="flex items-center justify-center gap-1.5">
-      <CheckIcon className="w-4 h-4 text-blue-600" />
-      <span className="text-gray-700">{value}</span>
+    <div className={`flex items-center ${gap}`}>
+      {isHighlight && (
+        <CheckIcon className={`${iconSize} text-green-600 flex-shrink-0`} />
+      )}
+      <span
+        className={`${isHighlight ? "text-gray-900" : "text-gray-600"} ${textSize} leading-tight`}
+      >
+        {value}
+      </span>
+    </div>
+  );
+};
+
+// ============================================
+// MOBILE COMPARISON CARD
+// ============================================
+
+const MobileComparisonCard = ({ row }: { row: ComparisonFeature }) => (
+  <div className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
+    {/* Feature Header */}
+    <div className="px-3 py-2.5 bg-gray-50 border-b border-gray-100">
+      <span className="font-medium text-gray-900 text-sm">{row.feature}</span>
+      {row.subtext && (
+        <span className="text-xs text-gray-500 ml-1">({row.subtext})</span>
+      )}
+    </div>
+
+    {/* Values Grid */}
+    <div className="grid grid-cols-2 divide-x divide-gray-100">
+      {/* Sanaka Value */}
+      <div className="px-3 py-2.5 bg-blue-50/40">
+        <div className="text-[10px] font-semibold text-blue-600 uppercase tracking-wider mb-1">
+          Sanaka
+        </div>
+        <ValueDisplay value={row.sanaka} isHighlight size="small" />
+      </div>
+
+      {/* Normal Value */}
+      <div className="px-3 py-2.5">
+        <div className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider mb-1">
+          Normal
+        </div>
+        <ValueDisplay value={row.normal} size="small" />
+      </div>
+    </div>
+  </div>
+);
+
+// ============================================
+// VEHICLE CARD (Display Only)
+// ============================================
+
+const VehicleCard = ({ vehicle }: { vehicle: VehicleOption }) => {
+  const Icon = vehicle.icon;
+  return (
+    <div className="p-3 sm:p-4 lg:p-5 rounded-xl border border-gray-200 bg-white text-center">
+      <Icon className="w-full h-12 sm:h-16 lg:h-20 mb-2 sm:mb-3 opacity-80" />
+      <h3 className="font-medium text-xs sm:text-sm lg:text-base text-gray-900">
+        {vehicle.name}
+      </h3>
+      <p className="text-[10px] sm:text-xs lg:text-sm text-gray-500 mt-0.5">
+        {vehicle.subtitle}
+      </p>
     </div>
   );
 };
@@ -521,143 +256,176 @@ const renderCellValue = (value: string | boolean) => {
 // MAIN COMPONENT
 // ============================================
 
-export default function PackageSolutions() {
-  const [selectedVehicle, setSelectedVehicle] =
-    useState<VehicleType>("e-rickshaw");
-
+export default function BatteryComparisonTable() {
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-100 min-h-screen">
-      <div className="max-w-6xl mx-auto">
-        {/* Main Card */}
-        <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+    <section className="py-8 sm:py-12 lg:py-16 xl:py-20 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main Card Container */}
+        <div className="bg-white rounded-xl sm:rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
           {/* Header Section */}
-          <div className="p-8 pb-6">
-            <h1 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-8">
-              Package solutions for your fleet
-            </h1>
+          <div className="px-4 sm:px-6 lg:px-10 pt-6 sm:pt-8 pb-4 sm:pb-6">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-900">
+              Advantages of Sanaka Lithium Battery
+            </h2>
+            <p className="text-gray-500 text-sm sm:text-base mt-1">
+              over Normal Acid Battery
+            </p>
+          </div>
 
-            {/* Vehicle Selection Tabs */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {vehicles.map((vehicle) => {
-                const Icon = vehicleIcons[vehicle.id];
-                const isSelected = selectedVehicle === vehicle.id;
-                return (
-                  <button
-                    key={vehicle.id}
-                    onClick={() => setSelectedVehicle(vehicle.id)}
-                    className={`relative p-4 rounded-xl border-2 transition-all duration-200 text-left ${
-                      isSelected
-                        ? "border-blue-600 bg-white"
-                        : "border-gray-200 bg-white hover:border-gray-300"
-                    }`}
-                  >
-                    {/* Vehicle Illustration */}
-                    <div className="h-20 flex items-center justify-center mb-3">
-                      <Icon className="w-full h-full max-w-[160px]" />
-                    </div>
-                    {/* Vehicle Name */}
-                    <h3
-                      className={`font-medium text-sm ${
-                        isSelected ? "text-blue-600" : "text-gray-900"
-                      }`}
-                    >
-                      {vehicle.name}
-                    </h3>
-                    <p className="text-xs text-gray-500 mt-0.5">
-                      {vehicle.subtitle}
-                    </p>
-                  </button>
-                );
-              })}
+          {/* Vehicle Cards (Display Only) */}
+          <div className="px-4 sm:px-6 lg:px-10 pb-6 sm:pb-8">
+            <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4">
+              {vehicleOptions.map((vehicle, index) => (
+                <VehicleCard key={index} vehicle={vehicle} />
+              ))}
             </div>
           </div>
 
-          {/* Pricing Table Section */}
-          <div className="border-t border-gray-200">
-            {/* Plan Headers */}
-            <div className="grid grid-cols-4 border-b border-gray-200">
-              {/* Equipment Label */}
-              <div className="px-6 py-6 flex items-end">
-                <span className="text-sm font-medium text-gray-500">
-                  Equipment
+          {/* Divider */}
+          <div className="border-t border-gray-200" />
+
+          {/* ============================================
+              MOBILE VIEW: Card Layout
+              ============================================ */}
+          <div className="md:hidden">
+            {/* Mobile Column Headers */}
+            <div className="grid grid-cols-2 bg-gray-50 border-b border-gray-200">
+              <div className="px-4 py-3 text-center">
+                <span className="text-sm font-semibold text-blue-600">
+                  Sanaka Lithium
                 </span>
               </div>
+              <div className="px-4 py-3 text-center border-l border-gray-200">
+                <span className="text-sm font-semibold text-gray-600">
+                  Normal Acid
+                </span>
+              </div>
+            </div>
 
-              {/* Plan Columns */}
-              {plans.map((plan, index) => (
-                <div
-                  key={plan.name}
-                  className={`px-4 py-6 text-center ${
-                    index < plans.length - 1 ? "border-r border-gray-100" : ""
-                  }`}
-                >
-                  <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-2">
-                    {plan.name}
-                  </h3>
-                  <p className="text-sm text-gray-500 mb-4 min-h-[40px]">
-                    {plan.description}
-                  </p>
-                  <button
-                    className={`px-6 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                      plan.buttonStyle === "filled"
-                        ? "bg-blue-600 text-white hover:bg-blue-700"
-                        : "border border-gray-300 text-gray-700 hover:bg-gray-50"
-                    }`}
-                  >
-                    Order a solution
-                  </button>
+            {/* Mobile Cards */}
+            <div className="p-4 space-y-2">
+              {comparisonData.map((row, index) => (
+                <div key={index}>
+                  {/* Category Label */}
+                  {row.category && (
+                    <div className="mt-4 mb-2 first:mt-0">
+                      <span className="text-[11px] font-bold text-gray-500 uppercase tracking-wider">
+                        {row.category}
+                      </span>
+                    </div>
+                  )}
+                  <MobileComparisonCard row={row} />
                 </div>
               ))}
             </div>
 
-            {/* Feature Sections */}
-            {featureSections.map((section) => (
-              <div key={section.title}>
-                {/* Section Title */}
-                <div className="grid grid-cols-4 bg-gray-50 border-b border-gray-200">
-                  <div className="px-6 py-3 col-span-4">
-                    <span className="text-sm font-semibold text-gray-700">
-                      {section.title}
-                    </span>
-                  </div>
-                </div>
+            {/* Mobile CTA */}
+            <div className="p-4 pt-2 border-t border-gray-100">
+              <a
+                href="/contact"
+                className="flex items-center justify-center gap-2 w-full py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 active:bg-blue-800 transition-colors"
+              >
+                <span>Get a Quote</span>
+                <ArrowIcon className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
 
-                {/* Features */}
-                {section.features.map((feature, featureIndex) => (
-                  <div
-                    key={featureIndex}
-                    className="grid grid-cols-4 border-b border-gray-100 hover:bg-gray-50 transition-colors"
-                  >
-                    {/* Feature Name */}
-                    <div className="px-6 py-4 flex flex-col justify-center">
-                      <span className="text-sm text-gray-900">
-                        {feature.name}
+          {/* ============================================
+              DESKTOP VIEW: Table Layout
+              ============================================ */}
+          <div className="hidden md:block">
+            {/* Table Header */}
+            <div className="grid grid-cols-3 bg-gray-50 border-b border-gray-200">
+              <div className="px-6 lg:px-10 py-4 lg:py-5">
+                <span className="text-sm font-medium text-gray-500">
+                  Feature
+                </span>
+              </div>
+              <div className="px-4 lg:px-6 py-4 lg:py-5 text-center border-l border-gray-200">
+                <h3 className="text-lg lg:text-xl font-semibold text-blue-600">
+                  Sanaka Lithium
+                </h3>
+                <p className="text-xs lg:text-sm text-gray-500 mt-0.5">
+                  Advanced battery technology
+                </p>
+                <a
+                  href="/contact"
+                  className="inline-block mt-3 px-4 py-2 text-sm font-medium text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50 transition-colors"
+                >
+                  Order a solution
+                </a>
+              </div>
+              <div className="px-4 lg:px-6 py-4 lg:py-5 text-center border-l border-gray-200">
+                <h3 className="text-lg lg:text-xl font-semibold text-gray-600">
+                  Normal Acid
+                </h3>
+                <p className="text-xs lg:text-sm text-gray-500 mt-0.5">
+                  Traditional lead-acid battery
+                </p>
+                <span className="inline-block mt-3 px-4 py-2 text-sm font-medium text-gray-400 border border-gray-300 rounded-lg cursor-not-allowed">
+                  Legacy option
+                </span>
+              </div>
+            </div>
+
+            {/* Table Body */}
+            <div>
+              {comparisonData.map((row, index) => (
+                <div key={index}>
+                  {/* Category Header */}
+                  {row.category && (
+                    <div className="px-6 lg:px-10 py-3 bg-gray-50 border-b border-gray-100">
+                      <span className="text-sm font-semibold text-gray-700 uppercase tracking-wider">
+                        {row.category}
                       </span>
-                      {feature.subtext && (
-                        <span className="text-xs text-gray-500 mt-0.5">
-                          {feature.subtext}
+                    </div>
+                  )}
+
+                  {/* Feature Row */}
+                  <div className="grid grid-cols-3 border-b border-gray-100 hover:bg-gray-50/50 transition-colors">
+                    {/* Feature Name */}
+                    <div className="px-6 lg:px-10 py-4 flex flex-col justify-center">
+                      <span className="text-gray-900 font-medium text-sm lg:text-base">
+                        {row.feature}
+                      </span>
+                      {row.subtext && (
+                        <span className="text-xs lg:text-sm text-gray-500 mt-0.5">
+                          {row.subtext}
                         </span>
                       )}
                     </div>
 
-                    {/* Economy Value */}
-                    <div className="px-4 py-4 flex items-center justify-center border-l border-gray-100">
-                      {renderCellValue(feature.economy)}
+                    {/* Sanaka Value */}
+                    <div className="px-4 lg:px-6 py-4 flex items-center justify-center border-l border-gray-100 bg-blue-50/20">
+                      <ValueDisplay value={row.sanaka} isHighlight />
                     </div>
 
-                    {/* Comfort Value */}
-                    <div className="px-4 py-4 flex items-center justify-center border-l border-gray-100">
-                      {renderCellValue(feature.comfort)}
-                    </div>
-
-                    {/* Premium Value */}
-                    <div className="px-4 py-4 flex items-center justify-center border-l border-gray-100">
-                      {renderCellValue(feature.premium)}
+                    {/* Normal Value */}
+                    <div className="px-4 lg:px-6 py-4 flex items-center justify-center border-l border-gray-100">
+                      <ValueDisplay value={row.normal} />
                     </div>
                   </div>
-                ))}
+                </div>
+              ))}
+            </div>
+
+            {/* Desktop Footer */}
+            <div className="px-6 lg:px-10 py-5 lg:py-6 bg-gray-50 border-t border-gray-200">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p className="text-sm text-gray-600 text-center sm:text-left">
+                  Make the switch to Sanaka Lithium and experience the
+                  difference.
+                </p>
+                <a
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                >
+                  Get a Quote
+                  <ArrowIcon className="w-4 h-4" />
+                </a>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
