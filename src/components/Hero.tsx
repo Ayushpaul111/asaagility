@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
         </div>
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-gray-900 leading-tight animate-fade-in-up animation-delay-200">
-          Batteries That Feels
+          Batteries Feels
           <br />
           Trust Worthy
         </h1>

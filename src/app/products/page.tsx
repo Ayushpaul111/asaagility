@@ -131,10 +131,10 @@ const Products = () => {
   ];
 
   return (
-    <section className="min-h-screen max-w-300  mx-auto ">
+    <section className="min-h-screen max-w-300 mx-auto">
       {/* Hero Header */}
       <div className="px-6 pt-32 pb-20">
-        <div className="max-w-4xl">
+        <div className="max-w-300">
           <div className="text-sm uppercase tracking-widest text-black/40 mb-6">
             Our Products
           </div>

@@ -80,7 +80,7 @@ const MobileNavItem = memo(function MobileNavItem({
       onClick={onClose}
       className={cn(
         "flex items-center justify-between py-4 px-5 text-sm font-medium",
-        "border-b border-gray-100 last:border-b-0",
+        "border-b border-gray-100",
         "transition-colors duration-150",
         isActive
           ? "bg-[#5C905E]/10 text-[#5C905E] font-bold"
@@ -289,7 +289,7 @@ const Header: React.FC = () => {
               <img
                 src="https://static.vecteezy.com/system/resources/previews/012/982/310/non_2x/chocolate-and-green-tea-logo-icon-free-png.png"
                 alt="Asaagility-logo"
-                className="h-12"
+                className="h-7 md:h-12"
                 loading="eager"
                 decoding="async"
               />
@@ -306,7 +306,8 @@ const Header: React.FC = () => {
 
           {/* Actions */}
           <div className="flex items-center space-x-4">
-            <Link href="/contact">
+            {/* Desktop Contact Button - hidden on mobile */}
+            <Link href="/contact" className="hidden md:block">
               <motion.button
                 style={{ scale: textSize }}
                 whileHover={{ scale: 1.05 }}
@@ -348,7 +349,34 @@ const Header: React.FC = () => {
                 transition={{ duration: 0.15 }}
                 className="absolute top-full left-4 right-4 mt-2 bg-white rounded-2xl shadow-xl md:hidden overflow-hidden"
               >
-                <nav className="flex flex-col">{mobileNavItems}</nav>
+                <nav className="flex flex-col">
+                  {mobileNavItems}
+
+                  {/* Mobile Contact Button */}
+                  <Link
+                    href="/contact"
+                    onClick={closeMenu}
+                    className={cn(
+                      "py-4 px-5 text-sm font-medium",
+                      "transition-colors duration-150",
+                      isContactActive
+                        ? "bg-[#5C905E]/10 text-[#5C905E] font-bold"
+                        : "text-gray-700 hover:bg-gray-50 hover:text-[#5C905E]",
+                    )}
+                  >
+                    <div className="flex items-center justify-between p-4 rounded-2xl border border-green-800/30 text-left transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ">
+                      <span>BOOK NOW</span>
+                      {isContactActive && (
+                        <span className="flex items-center gap-2">
+                          <span className="text-xs text-[#5C905E]/70">
+                            You're here
+                          </span>
+                          <span className="w-2 h-2 bg-[#5C905E] rounded-full" />
+                        </span>
+                      )}
+                    </div>
+                  </Link>
+                </nav>
               </motion.div>
             )}
           </AnimatePresence>
