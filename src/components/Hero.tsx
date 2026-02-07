@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 lg:mt-24">
+      {/* <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 lg:mt-24">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
           <div className="animate-fade-in-up animation-delay-500">
             <HighlightIcon src="https://cdn.prod.website-files.com/66797c2909f9ec0b1ff1a767/66798ff1d31f6059e7ca6963_comments.png" />
@@ -87,7 +87,7 @@ const Hero: React.FC = () => {
         <p className="text-center text-sm text-gray-500 mt-12">
           *Subject to our Play by the Rules policy
         </p>
-      </div>
+      </div> */}
     </header>
   );
 };

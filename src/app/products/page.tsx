@@ -105,7 +105,7 @@ const Products = () => {
   const products = [
     {
       title: "E-Rickshaw Battery",
-      image: "https://ruchiragreenearth.com/img/e-rickshaw-battery.png",
+      image: "/sanaka-battery-e-rickshaw.png",
       specs: { voltage: "60V", capacity: "100Ah" },
       warranty: 3,
       pricing: 45000,
@@ -113,7 +113,7 @@ const Products = () => {
     },
     {
       title: "E-Loader Battery",
-      image: "https://ruchiragreenearth.com/img/e-rickshaw-battery.png",
+      image: "/sanaka-battery-e-rickshaw.png",
       specs: { voltage: "72V", capacity: "120Ah" },
       warranty: 3,
       pricing: 65000,

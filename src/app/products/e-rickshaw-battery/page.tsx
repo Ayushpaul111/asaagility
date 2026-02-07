@@ -20,7 +20,7 @@ const ERickshawBattery = () => {
     <ProductDetail
       name="E-Rickshaw Lithium Battery"
       description="High-performance 60V 100Ah lithium-ion battery built for the demands of commercial e-rickshaw operations. Delivers exceptional range, rapid charging, and dependable power day after day."
-      image="https://pelostudio-storyblok-assets.b-cdn.net/f/236077/2032x1947/c11df9dd29/borne.png/m/smart/filters:quality(70)"
+      image="/sanaka-battery-e-rickshaw.png"
       voltage="60V"
       capacity="100Ah"
       warranty={3}

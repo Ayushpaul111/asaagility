@@ -1,8 +1,10 @@
+import Image from "next/image";
+
 const about = () => {
   const stats = [
-    { number: "40+", label: "Years founded" },
-    { number: "231", label: "Satisfied Clients" },
-    { number: "32", label: "Awards Received" },
+    { number: "5000+", label: "Batteries Delivered" },
+    { number: "500+", label: "Happy Dealers" },
+    { number: "24hrs", label: "Fast Approval" },
   ];
   return (
     <>
@@ -64,18 +66,19 @@ const about = () => {
             <div className="lg:pt-32">
               <div className="prose prose-lg max-w-none">
                 <p className="text-gray-700 leading-relaxed mb-6 text-sm md:text-base">
-                  At Artemis, we understand that it's not easy buying your home,
-                  and it's not - it's the significant of your life's journey.
-                  We're also prepared to understand the psychological aspects of
-                  your client's emotions, and we assure you that we'll give you
-                  exactly what you're looking for and to bring a better
-                  experience for you.
+                  At ASA Agility, we understand that powering your business
+                  isn't just about batteries, it's about keeping your fleet
+                  moving and your customers satisfied. We're prepared to
+                  understand the unique demands of e-bike and e-rickshaw dealers
+                  and owners, and we assure you that we'll deliver exactly what
+                  you need to keep your vehicles on the road with reliable,
+                  long-lasting power.
                 </p>
 
                 <div className="mt-12">
                   <h2 className="text-3xl md:text-4xl font-normal mb-6">
                     <span className="text-green-600">
-                      Transparency, integrity, and professionalism
+                      Reliability, trust, and fast service
                     </span>
                     <span className="text-gray-800">
                       {" "}
@@ -83,9 +86,11 @@ const about = () => {
                     </span>
                   </h2>
                   <p className="text-gray-700 leading-relaxed text-sm md:text-base">
-                    We prioritize clear communication and honest advice,
+                    We prioritize clear communication and honest guidance,
                     ensuring that you're empowered to make informed decisions
-                    throughout your buying or selling process.
+                    about the best lithium battery solutions for your business.
+                    With our fast approval finance options, you can own the
+                    batteries you need today.
                   </p>
                 </div>
               </div>
@@ -120,14 +125,15 @@ const about = () => {
                       01.
                     </h3>
                     <h4 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-4">
-                      Experienced Builder
+                      Visit Our Store & Choose Your Battery
                     </h4>
                     <p className="text-xs md:text-sm leading-relaxed text-gray-100 max-w-sm">
-                      We pride ourselves on being seasoned experts in the art of
-                      construction. With years of hands-on experience and a
-                      portfolio of successful projects, our team of experienced
-                      builders brings unparalleled skill, craftsmanship, and
-                      attention to detail to every endeavor.
+                      Experience our batteries firsthand at our showroom. Our
+                      expert team will help you select the perfect lithium
+                      battery solution for your e-bikes or e-rickshaws. We
+                      understand your business needs and offer batteries that
+                      are not only powerful but built to last in Indian market
+                      conditions.
                     </p>
                   </div>
 
@@ -174,7 +180,7 @@ const about = () => {
                     02.
                   </h3>
                   <h4 className="text-base md:text-lg font-normal text-gray-900">
-                    Expert Market Knowledge.
+                    Fast Approval Finance Options.
                   </h4>
                 </div>
               </div>
@@ -186,7 +192,7 @@ const about = () => {
                     03.
                   </h3>
                   <h4 className="text-base md:text-lg font-normal text-gray-900">
-                    Unrivaled Customer Satisfaction.
+                    Reliable & Trusted in the Market.
                   </h4>
                 </div>
               </div>
@@ -257,40 +263,46 @@ const about = () => {
             </span>
           </h2>
 
-          {/* Founder 01 - Viktor Sanjaya */}
+          {/* Founder 01 - Amit Dhar */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-20 md:mb-32">
             {/* Left - Number and Description */}
             <div className="flex gap-6 md:gap-8">
-              <div className="flex-shrink-0">
+              {/* <div className="flex-shrink-0">
                 <h3 className="text-7xl md:text-8xl lg:text-9xl font-bold text-gray-900">
                   01
                 </h3>
-              </div>
+              </div> */}
               <div className="pt-4">
                 <h4 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-4">
                   Amit Dhar
                 </h4>
                 <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                  an{" "}
+                  A{" "}
                   <span className="underline decoration-gray-400">
-                    accomplished architect
+                    visionary entrepreneur
                   </span>{" "}
-                  driven by a vision to curate exceptional properties that
-                  resonate with diverse client needs. Viktor's expertise in
-                  design and sustainability ensures that each property embodies
-                  the highest standards of excellence.
+                  with diverse business expertise across multiple industries. As
+                  the founder of Dhar Gases, Dhar Medical, and ASA Agility. Amit
+                  brings decades of business acumen to the lithium battery
+                  industry. ASA Agility, where "Asa" means hope and "Agility"
+                  represents swift action embodies his vision of providing
+                  reliable power solutions with speed and trust to India's
+                  growing electric mobility sector.
                 </p>
               </div>
             </div>
 
             {/* Right - Image */}
             <div className="flex justify-center lg:justify-end">
-              <div className="w-full max-w-md aspect-[3/4] bg-gray-300 overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=800&fit=crop"
-                  alt="Viktor Sanjaya"
-                  className="w-full h-full object-cover"
-                />
+              <div className="w-full max-w-md aspect-3/4 bg-gray-300 overflow-hidden">
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/Aamit-dhar.jpg"
+                    alt="Aamit Dhar"
+                    className="object-cover"
+                    fill
+                  />
+                </div>
               </div>
             </div>
           </div>

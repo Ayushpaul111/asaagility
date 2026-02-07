@@ -57,7 +57,7 @@ const ProductDetail = ({
             {/* Left — Editorial Content */}
             <div className="space-y-10">
               <div className="space-y-6">
-                <h1 className="text-[clamp(3rem,6vw,5.5rem)] font-extrabold tracking-tight leading-[0.9] text-black">
+                <h1 className="text-[clamp(3rem,5vw,5rem)] font-extrabold tracking-tight leading-[0.9] text-black">
                   {name}
                 </h1>
                 <p className="text-lg text-black/60 max-w-lg">{description}</p>

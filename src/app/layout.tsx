@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+// import Preloader from "@/components/Preloader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -79,6 +80,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased text-black`}
       >
         {" "}
+        {/* <Preloader /> */}
         <div className="bg-[#141414] ">
           {/* This wrapper is the "curtain" that contains all page content except the footer.
           It scrolls up to reveal the footer. */}
