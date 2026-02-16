@@ -1,13 +1,13 @@
 import React from "react";
 
-const HighlightIcon: React.FC<{ src: string }> = ({ src }) => (
-  <div className="relative inline-block mb-4">
-    <div className="absolute -inset-2 rounded-full opacity-50 blur-lg"></div>
-    <div className="relative w-16 h-16 bg-white/70 backdrop-blur-sm rounded-full flex items-center justify-center shadow-inner-sm">
-      <img src={src} loading="lazy" width="32" height="32" alt="" />
-    </div>
-  </div>
-);
+// const HighlightIcon: React.FC<{ src: string }> = ({ src }) => (
+//   <div className="relative inline-block mb-4">
+//     <div className="absolute -inset-2 rounded-full opacity-50 blur-lg"></div>
+//     <div className="relative w-16 h-16 bg-white/70 backdrop-blur-sm rounded-full flex items-center justify-center shadow-inner-sm">
+//       <img src={src} loading="lazy" width="32" height="32" alt="" />
+//     </div>
+//   </div>
+// );
 
 const Hero: React.FC = () => {
   return (
@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
               >
                 <video
                   className="absolute top-0 left-0 w-full h-full rounded-2xl object-cover"
-                  src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+                  src="/sanaka-battery.mp4"
                   autoPlay
                   muted
                   loop

@@ -261,17 +261,15 @@ export default function BatteryComparisonTable() {
     <section className="py-8 sm:py-12 lg:py-16 xl:py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Card Container */}
+        <div className="mb-12 text-center px-4">
+          <h2 className="text-3xl sm:text-4xl font-medium tracking-tighter">
+            Advantages of Sanaka Lithium Battery
+          </h2>
+          <p className="text-xs uppercase text-neutral-500 tracking-widest mb-2">
+            over Normal Acid Battery
+          </p>
+        </div>
         <div className="bg-white rounded-xl sm:rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
-          {/* Header Section */}
-          <div className="px-4 sm:px-6 lg:px-10 pt-6 sm:pt-8 pb-4 sm:pb-6">
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-900">
-              Advantages of Sanaka Lithium Battery
-            </h2>
-            <p className="text-gray-500 text-sm sm:text-base mt-1">
-              over Normal Acid Battery
-            </p>
-          </div>
-
           {/* Vehicle Cards (Display Only) */}
           <div className="px-4 sm:px-6 lg:px-10 pb-6 sm:pb-8">
             <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4">

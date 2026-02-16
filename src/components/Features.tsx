@@ -4,14 +4,13 @@ const Features: React.FC = () => {
   return (
     <section className="py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-gray-900">
-            A US number, with peace of mind.
-          </h2>
-          <p className="mt-4 max-w-xl mx-auto text-lg text-gray-600">
-            Get started in 72 Seconds. <br />
-            Activate from anywhere worldwide.
+        <div className="mb-12 text-center px-4">
+          <p className="text-xs uppercase text-neutral-500 tracking-widest mb-2">
+            Asa Agility's Key Benefits
           </p>
+          <h2 className="text-3xl sm:text-4xl font-medium tracking-tighter">
+            Why Choose Us?
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
