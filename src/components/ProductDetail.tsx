@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 interface Specification {
@@ -95,12 +96,13 @@ const ProductDetail = ({
             </div>
 
             {/* Right — Product Visual */}
-            <div className="relative">
-              {/* Image */}
-              <img
+            <div className="relative w-full h-130">
+              <Image
                 src={image}
                 alt={name}
-                className="w-full max-h-[520px] object-contain mx-auto"
+                fill
+                className="object-contain"
+                priority
               />
 
               {/* Floating Specs */}

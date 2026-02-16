@@ -20,7 +20,7 @@ const ELoaderBattery = () => {
     <ProductDetail
       name="E-Loader Lithium Battery"
       description="Heavy-duty 72V 120Ah lithium-ion battery engineered for e-loaders and electric cargo vehicles. Built to handle demanding payloads with maximum range and uncompromising reliability."
-      image="https://ruchiragreenearth.com/img/e-rickshaw-battery.png"
+      image="/ev-bike-battery.png"
       voltage="72V"
       capacity="120Ah"
       warranty={3}

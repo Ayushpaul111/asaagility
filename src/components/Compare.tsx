@@ -271,7 +271,7 @@ export default function BatteryComparisonTable() {
         </div>
         <div className="bg-white rounded-xl sm:rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
           {/* Vehicle Cards (Display Only) */}
-          <div className="px-4 sm:px-6 lg:px-10 pb-6 sm:pb-8">
+          <div className="px-4 sm:px-6 lg:px-10 py-6 md:py-10">
             <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4">
               {vehicleOptions.map((vehicle, index) => (
                 <VehicleCard key={index} vehicle={vehicle} />
@@ -417,7 +417,7 @@ export default function BatteryComparisonTable() {
                 </p>
                 <a
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 bg-green-800/90 text-white font-medium rounded-lg hover:bg-green-900 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 >
                   Get a Quote
                   <ArrowIcon className="w-4 h-4" />

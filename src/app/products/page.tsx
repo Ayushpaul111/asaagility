@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -36,12 +37,13 @@ const ProductCard = ({
       >
         {/* Image Side */}
         <div className="md:w-1/2">
-          <div className="relative overflow-hidden">
+          <div className="relative w-full h-[400px] overflow-hidden">
             <div className="absolute inset-0 bg-linear-to-br from-black/2 to-transparent" />
-            <img
+            <Image
               src={image}
               alt={title}
-              className="w-full h-100 object-contain transform group-hover:scale-105 transition-transform duration-500"
+              fill
+              className="object-contain transform group-hover:scale-105 transition-transform duration-500"
             />
           </div>
         </div>
@@ -121,8 +123,7 @@ const Products = () => {
     },
     {
       title: "E-Bike & Scooty Battery",
-      image:
-        "https://vigorvolt.com/wp-content/uploads/2025/09/12v-32ah-battery.png",
+      image: "/ev-bike-battery.png",
       specs: { voltage: "48V", capacity: "30Ah" },
       warranty: 2,
       pricing: 18000,

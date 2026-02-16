@@ -111,8 +111,8 @@ const about = () => {
                 {/* Background Image */}
                 <div className="absolute inset-0">
                   <img
-                    src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop"
-                    alt="Modern architecture"
+                    src="/asaagility-products.png"
+                    alt="asa agility products"
                     className="w-full h-full object-cover opacity-60"
                   />
                   <div className="absolute inset-0 bg-linear-to-br from-black/60 via-black/40 to-transparent"></div>
@@ -138,7 +138,7 @@ const about = () => {
                   </div>
 
                   {/* Decorative Triangle Element */}
-                  <div className="absolute bottom-0 right-0 w-40 h-40 md:w-48 md:h-48 opacity-80">
+                  {/* <div className="absolute bottom-0 right-0 w-40 h-40 md:w-48 md:h-48 opacity-80">
                     <svg viewBox="0 0 200 200" className="w-full h-full">
                       <defs>
                         <linearGradient
@@ -169,7 +169,7 @@ const about = () => {
                         strokeWidth="3"
                       />
                     </svg>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
