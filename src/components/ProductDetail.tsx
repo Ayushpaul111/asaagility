@@ -1,9 +1,20 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useMemo } from "react";
 
 interface Specification {
   label: string;
   value: string;
+}
+
+export interface ProductVariant {
+  label: string;
+  voltage: string;
+  capacity: string;
+  warranty: number;
+  price: number;
 }
 
 interface ProductDetailProps {
@@ -16,6 +27,7 @@ interface ProductDetailProps {
   price: number;
   specifications: Specification[];
   features: string[];
+  variants?: ProductVariant[];
 }
 
 const ProductDetail = ({
@@ -28,7 +40,50 @@ const ProductDetail = ({
   price,
   specifications,
   features,
+  variants,
 }: ProductDetailProps) => {
+  const [selectedVariantIndex, setSelectedVariantIndex] = useState<number>(-1);
+  const hasVariants = variants && variants.length > 0;
+
+  // Derive active display values from selected variant or fallback to base props
+  const activeValues = useMemo(() => {
+    if (hasVariants && selectedVariantIndex >= 0) {
+      const v = variants[selectedVariantIndex];
+      return {
+        voltage: v.voltage,
+        capacity: v.capacity,
+        warranty: v.warranty,
+        price: v.price,
+      };
+    }
+    return { voltage, capacity, warranty, price };
+  }, [
+    hasVariants,
+    selectedVariantIndex,
+    variants,
+    voltage,
+    capacity,
+    warranty,
+    price,
+  ]);
+
+  // Price range for variants
+  const priceRange = useMemo(() => {
+    if (!hasVariants) return null;
+    const prices = variants.map((v) => v.price);
+    return { min: Math.min(...prices), max: Math.max(...prices) };
+  }, [hasVariants, variants]);
+
+  const displayPrice =
+    hasVariants && selectedVariantIndex === -1 && priceRange
+      ? `₹${priceRange.min.toLocaleString()} – ₹${priceRange.max.toLocaleString()}`
+      : `₹${activeValues.price.toLocaleString()}`;
+
+  const warrantyText =
+    activeValues.warranty >= 12
+      ? `${Math.floor(activeValues.warranty / 12)} year${Math.floor(activeValues.warranty / 12) > 1 ? "s" : ""}`
+      : `${activeValues.warranty} month${activeValues.warranty > 1 ? "s" : ""}`;
+
   return (
     <div className="min-h-screen max-w-300 pt-32 mx-auto">
       {/* Navigation */}
@@ -58,25 +113,63 @@ const ProductDetail = ({
             {/* Left — Editorial Content */}
             <div className="space-y-10">
               <div className="space-y-6">
-                <h1 className="text-[clamp(3rem,5vw,5rem)] font-extrabold tracking-tight leading-[0.9] text-black">
+                <h1 className="text-[clamp(3rem,4vw,4rem)] font-extrabold tracking-tight leading-[0.9] text-black">
                   {name}
                 </h1>
                 <p className="text-lg text-black/60 max-w-lg">{description}</p>
               </div>
 
-              {/* Price Block */}
-              <div className="inline-flex items-end gap-4">
-                <span className="text-5xl font-extrabold text-black">
-                  ₹{price.toLocaleString()}
-                </span>
-                <span className="text-xs uppercase tracking-widest text-black/40 mb-1">
-                  Starting
-                </span>
-              </div>
+              {/* Variant Selector */}
+              {hasVariants && (
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-black uppercase tracking-wider">
+                    Options with Warranty
+                  </label>
+                  <div className="relative w-full max-w-sm">
+                    <select
+                      value={selectedVariantIndex}
+                      onChange={(e) =>
+                        setSelectedVariantIndex(Number(e.target.value))
+                      }
+                      className="w-full appearance-none border border-black/20 bg-white px-4 py-3.5 pr-10 text-sm font-medium text-black focus:outline-none focus:border-black transition-colors cursor-pointer"
+                    >
+                      <option value={-1}>Choose an option</option>
+                      {variants.map((variant, index) => (
+                        <option key={index} value={index}>
+                          {variant.label}
+                        </option>
+                      ))}
+                    </select>
+                    <svg
+                      className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-black/40 pointer-events-none"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M6 9l6 6 6-6" />
+                    </svg>
+                  </div>
+                </div>
+              )}
 
-              <p className="text-sm text-black/50">
-                {warranty} year comprehensive warranty included
-              </p>
+              {/* Price Block */}
+              <div className="space-y-2">
+                <div className="inline-flex items-end gap-4">
+                  <span className="text-5xl font-extrabold text-black">
+                    {displayPrice}
+                  </span>
+                  {hasVariants == null && (
+                    <span className="text-xs uppercase tracking-widest text-black/40 mb-1">
+                      Starting
+                    </span>
+                  )}
+                </div>
+
+                <p className="text-sm text-black/50">
+                  {warrantyText} comprehensive warranty included
+                </p>
+              </div>
 
               {/* CTAs */}
               <div className="flex flex-wrap gap-4 pt-4">
@@ -109,16 +202,16 @@ const ProductDetail = ({
               <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-full max-w-md">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="backdrop-blur-md bg-white/80 border border-black/10 rounded-xl p-5">
-                    <div className="text-4xl font-bold text-black">
-                      {voltage}
+                    <div className="text-3xl font-bold text-black">
+                      {activeValues.voltage}
                     </div>
                     <div className="text-xs uppercase tracking-widest text-black/40">
                       Voltage
                     </div>
                   </div>
                   <div className="backdrop-blur-md bg-white/80 border border-black/10 rounded-xl p-5">
-                    <div className="text-4xl font-bold text-black">
-                      {capacity}
+                    <div className="text-3xl font-bold text-black">
+                      {activeValues.capacity}
                     </div>
                     <div className="text-xs uppercase tracking-widest text-black/40">
                       Capacity
