@@ -8,11 +8,11 @@ const about = () => {
   ];
   return (
     <>
-      <section className="relative w-full min-h-screen bg-[#f5f5f0] px-6 md:px-12 lg:px-20 pt-24 pb-16 max-w-300 mx-auto">
+      <section className="relative w-full min-h-screen px-6 md:px-12 lg:px-20 md:mt-24 mt-12 pb-16 max-w-300 mx-auto">
         {/* Main Content Container */}
         <div className="max-w-300 mx-auto pt-12">
           {/* Large ABOUT US Heading */}
-          <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight mb-16 md:mb-20">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] mb-8">
             ABOUT US
           </h1>
 

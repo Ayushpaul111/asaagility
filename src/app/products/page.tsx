@@ -31,13 +31,13 @@ const ProductCard = ({
   return (
     <Link href={`/products/${slug}`}>
       <div
-        className={`group cursor-pointer ${
+        className={`group cursor-pointer flex flex-col ${
           isEven ? "md:flex-row" : "md:flex-row-reverse"
-        } flex flex-col md:flex gap-8 items-center py-16 border-t border-black/10 hover:bg-black/1 transition-all`}
+        } gap-8 items-center py-16 border-t border-black/10 hover:bg-black/1 transition-all`}
       >
         {/* Image Side */}
-        <div className="md:w-1/2">
-          <div className="relative w-full h-[400px] overflow-hidden">
+        <div className="w-full md:w-1/2">
+          <div className="relative w-full h-64 md:h-[400px] overflow-hidden">
             <div className="absolute inset-0 bg-linear-to-br from-black/2 to-transparent" />
             <Image
               src={image}
@@ -49,7 +49,7 @@ const ProductCard = ({
         </div>
 
         {/* Content Side */}
-        <div className="md:w-1/2 space-y-6">
+        <div className="w-full md:w-1/2 space-y-6">
           <div>
             <h2 className="text-4xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-2 group-hover:translate-x-2 transition-transform">
               {title}
@@ -134,7 +134,7 @@ const Products = () => {
   return (
     <section className="min-h-screen max-w-300 mx-auto">
       {/* Hero Header */}
-      <div className="px-6 pt-32 pb-20">
+      <div className="px-6 mt-24 md:mt-32 pb-20">
         <div className="max-w-300">
           <div className="text-sm uppercase tracking-widest text-black/40 mb-6">
             Our Products

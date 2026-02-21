@@ -69,9 +69,9 @@ const CtaBanner: React.FC = () => {
             {/* Phone on Mobile */}
             <div className="order-2 lg:hidden bg-[#1C1C1C] flex justify-center items-center bg-[url('https://cdn.prod.website-files.com/66797c2909f9ec0b1ff1a767/667e846c24ba851c63c4d965_dark-noise-2.png'),_linear-gradient(#393737)]">
               <img
-                src="https://cdn.prod.website-files.com/66797c2909f9ec0b1ff1a767/67333b7ca78c01247bae7864_popcorn-home-2.webp"
+                src="/sanaka-battery-e-rickshaw.png"
                 alt="Phone in banner"
-                className="w-64 drop-shadow-2xl -mt-16 -mb-8 z-10"
+                className="w-120 drop-shadow-2xl -mt-16 -mb-8 z-10"
               />
             </div>
 
@@ -79,7 +79,7 @@ const CtaBanner: React.FC = () => {
             <div className="relative order-3 bg-[#1C1C1C] text-white p-8 sm:p-12 lg:p-16 flex flex-col items-center justify-center lg:justify-start  bg-[url('https://cdn.prod.website-files.com/66797c2909f9ec0b1ff1a767/667e846c24ba851c63c4d965_dark-noise-2.png'),_linear-gradient(#393737,#1b1b1b)]">
               <div className="relative z-10 lg:max-w-md w-full text-center lg:text-right">
                 <h3 className="text-4xl md:text-5xl font-bold tracking-tighter">
-                  One battery,
+                  Best battery,
                   <br />
                   fair price.
                 </h3>
@@ -103,9 +103,9 @@ const CtaBanner: React.FC = () => {
           {/* Phone on Desktop */}
           <div className="hidden lg:flex absolute inset-0 justify-center items-center pointer-events-none z-20">
             <img
-              src="https://pelostudio-storyblok-assets.b-cdn.net/f/236077/2032x1947/c11df9dd29/borne.png/m/smart/filters:quality(70)"
+              src="/ev-bike-battery.png"
               alt="Phone in banner"
-              className="w-130 h-auto drop-shadow-2xl"
+              className="w-88 h-auto drop-shadow-2xl"
             />
           </div>
         </div>

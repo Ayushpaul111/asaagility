@@ -274,7 +274,7 @@ const Header: React.FC = () => {
             "shadow-lg border",
             "transition-colors duration-300",
             isScrolled
-              ? "bg-[#5C905E]/70 backdrop-blur-md border-black/60"
+              ? "bg-[#5C905E]/70 backdrop-blur-md border-[#2e5c2f]/10"
               : "bg-[#5C905E] border-transparent",
           )}
         >
