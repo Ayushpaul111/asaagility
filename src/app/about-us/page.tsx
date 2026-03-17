@@ -247,67 +247,6 @@ const about = () => {
           </div>
         </div>
       </section>
-      <section className="relative w-full bg-[#f5f5f0] px-6 md:px-12 lg:px-20 py-16 md:py-24">
-        <div className="max-w-300 mx-auto">
-          {/* Section Title */}
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-16 md:mb-24">
-            Meet the{" "}
-            <span className="relative inline-block">
-              Founder
-              {/* Blue underline */}
-              <div className="-rotate-1">
-                <span className="absolute bottom-1 left-0 w-full h-0.5 bg-green-600 rounded-3xl"></span>
-                <span className="absolute bottom-0 left-0 -rotate-1 w-full h-1 md:h-1 bg-green-600 rounded-3xl"></span>
-                <span className="absolute -bottom-0.5 left-0 w-full h-0.5 bg-green-600 rounded-3xl"></span>
-              </div>
-            </span>
-          </h2>
-
-          {/* Founder 01 - Amit Dhar */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-20 md:mb-32">
-            {/* Left - Number and Description */}
-            <div className="flex gap-6 md:gap-8">
-              {/* <div className="flex-shrink-0">
-                <h3 className="text-7xl md:text-8xl lg:text-9xl font-bold text-gray-900">
-                  01
-                </h3>
-              </div> */}
-              <div className="pt-4">
-                <h4 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-4">
-                  Amit Dhar
-                </h4>
-                <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                  A{" "}
-                  <span className="underline decoration-gray-400">
-                    visionary entrepreneur
-                  </span>{" "}
-                  with diverse business expertise across multiple industries. As
-                  the founder of Dhar Gases, Dhar Medical, and ASA Agility. Amit
-                  brings decades of business acumen to the lithium battery
-                  industry. ASA Agility, where "Asa" means hope and "Agility"
-                  represents swift action embodies his vision of providing
-                  reliable power solutions with speed and trust to India's
-                  growing electric mobility sector.
-                </p>
-              </div>
-            </div>
-
-            {/* Right - Image */}
-            <div className="flex justify-center lg:justify-end">
-              <div className="w-full max-w-md aspect-3/4 bg-gray-300 overflow-hidden">
-                <div className="relative w-full h-full">
-                  <Image
-                    src="/Aamit-dhar.jpg"
-                    alt="Aamit Dhar"
-                    className="object-cover"
-                    fill
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 };
