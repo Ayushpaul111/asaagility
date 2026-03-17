@@ -32,9 +32,9 @@ const storeConfig = {
   // Replace this with your actual Google Maps embed URL
   // To get this: Go to Google Maps → Search your location → Click Share → Embed a map → Copy the src URL
   mapEmbedUrl:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.0761974968384!2d77.20659431508096!3d28.613939982422454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2daa9eb4d0b%3A0x717971125923e5d!2sConnaught%20Place%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1635000000000!5m2!1sen!2sin",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19640.461915069096!2d89.42535867578849!3d26.327013400000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e2fe9cfe605377%3A0x7e6d42ec77f7f00d!2sDhar%20Battery!5e0!3m2!1sen!2sin!4v1773723648316!5m2!1sen!2sin",
   // Google Maps link for "Get Directions" button
-  directionsUrl: "https://maps.google.com/?q=28.613939,77.209021",
+  directionsUrl: "https://maps.app.goo.gl/bTogUYLdb1LiUUXbA",
 };
 
 export default function ContactPage() {

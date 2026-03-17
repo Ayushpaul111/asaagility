@@ -139,10 +139,10 @@ const Products = () => {
           <div className="text-sm uppercase tracking-widest text-black/40 mb-6">
             Our Products
           </div>
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] mb-8">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] mb-8 animate-fade-in animation-delay-100">
             Power Your Future
           </h1>
-          <p className="text-xl text-black/60 leading-relaxed max-w-2xl">
+          <p className="text-xl text-black/60 leading-relaxed max-w-2xl animate-fade-in animation-delay-200">
             Industrial-grade lithium batteries engineered for performance,
             reliability, and longevity. Built for the demands of modern electric
             mobility.

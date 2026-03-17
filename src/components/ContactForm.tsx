@@ -259,8 +259,6 @@ export default function ContactForm() {
     setIsSubmitted(false);
     setTouched(new Set());
   };
-
-  // Success State
   if (isSubmitted) {
     return (
       <div className="flex flex-col items-center justify-center py-16 text-center">
@@ -296,10 +294,10 @@ export default function ContactForm() {
     <>
       {/* Header */}
       <header className="mb-8">
-        <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-2">
+        <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-2 animate-fade-in animation-delay-100">
           Get in touch
         </h1>
-        <p className="text-gray-600">
+        <p className="text-gray-600 animate-fade-in animation-delay-200">
           Our friendly team would love to hear from you.
         </p>
       </header>

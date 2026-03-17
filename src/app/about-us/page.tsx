@@ -12,7 +12,7 @@ const about = () => {
         {/* Main Content Container */}
         <div className="max-w-300 mx-auto pt-12">
           {/* Large ABOUT US Heading */}
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] mb-8">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] mb-8 animate-fade-in animation-delay-100">
             ABOUT US
           </h1>
 

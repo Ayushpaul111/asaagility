@@ -23,6 +23,7 @@ import { usePathname } from "next/navigation";
 const NAV_ITEMS = [
   { id: "products", label: "PRODUCTS", href: "/products" },
   { id: "about-us", label: "ABOUT US", href: "/about-us" },
+  { id: "stores", label: "STORES", href: "/stores" },
 ] as const;
 
 const SCROLL_THRESHOLD = 10;
