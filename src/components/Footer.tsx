@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Footer: React.FC = () => {
@@ -17,27 +18,28 @@ const Footer: React.FC = () => {
             </a>
           </div>
           <div>
-            <h4 className="font-semibold text-white mb-4">The Good</h4>
+            <h4 className="font-semibold text-white mb-4">We</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="hover:text-white">
+                <Link href="/" className="hover:text-white">
                   Home
-                </a>
+                </Link>
+              </li>
+
+              <li>
+                <Link href="/products" className="hover:text-white">
+                  Products
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white">
-                  Manifesto
-                </a>
+                <Link href="/about-us" className="hover:text-white">
+                  About Us
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white">
-                  Research
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Careers
-                </a>
+                <Link href="/stores" className="hover:text-white">
+                  Stores
+                </Link>
               </li>
             </ul>
           </div>
@@ -45,19 +47,14 @@ const Footer: React.FC = () => {
             <h4 className="font-semibold text-white mb-4">The Boring</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="hover:text-white">
-                  Terms
-                </a>
+                <Link href="/terms-and-conditions" className="hover:text-white">
+                  Terms & Conditions
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white">
-                  Play by the Rules
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Privacy
-                </a>
+                <Link href="/privacy-policy" className="hover:text-white">
+                  Privacy Policy
+                </Link>
               </li>
             </ul>
           </div>
@@ -65,14 +62,14 @@ const Footer: React.FC = () => {
             <h4 className="font-semibold text-white mb-4">The Cool</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="hover:text-white">
-                  X
-                </a>
+                <Link href="#" className="hover:text-white">
+                  Facebook
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white">
+                <Link href="#" className="hover:text-white">
                   Instagram
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

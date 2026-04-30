@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const ERickshawBattery = () => {
   return (
     <ProductDetail
-      name="SanakaE-Rickshaw/E-loader - Sanaka Lithium Battery"
+      name="Sanaka E-Rickshaw/E-loader - Lithium Battery"
       description="High-performance 60V 100Ah lithium-ion battery built for the demands of commercial e-rickshaw operations. Delivers exceptional range, rapid charging, and dependable power day after day."
       image="/sanaka-battery-e-rickshaw.png"
       voltage="62.2V"

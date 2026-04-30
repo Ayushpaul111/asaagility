@@ -121,7 +121,7 @@ const Products = () => {
       title: " Kamta E-Rickshaw/E-Loader Battery",
       image: "/kamta-battery.png",
       specs: { voltage: "62.2V", capacity: "105Ah" },
-      warranty: 3,
+      warranty: "3/5",
       pricing: 75000,
       discount: 61000,
       slug: "kamta-battery",

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 const storeConfig = {
   name: "Asaagility",
-  address: "123 Industrial Area, Phase 2",
+  address: "Silver Jubilee Rd, near Shani Mandir",
   city: "Cooch Behar",
   state: "West Bangal",
   pincode: "736101",
