@@ -29,7 +29,6 @@ const ERickshawBattery = () => {
         { label: "Battery Type", value: "Lithium-Ion (LiFePO4)" },
         { label: "Nominal Voltage", value: "60V" },
         { label: "Capacity", value: "100Ah" },
-        { label: "Energy", value: "6 kWh" },
         { label: "Cycle Life", value: "2000+ cycles" },
         { label: "Charging Time", value: "4-5 hours" },
         { label: "Operating Temperature", value: "-10°C to 55°C" },
@@ -37,7 +36,6 @@ const ERickshawBattery = () => {
         { label: "Dimensions", value: "Standard e-rickshaw fit" },
         { label: "BMS Protection", value: "Advanced smart BMS" },
         { label: "Warranty", value: "3 years comprehensive" },
-        { label: "Certification", value: "CE, RoHS, AIS-156 compliant" },
       ]}
       features={[
         "High capacity 100Ah — covers 80-120 km per charge for full-day operations",

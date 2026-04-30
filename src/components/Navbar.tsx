@@ -288,7 +288,7 @@ const Header: React.FC = () => {
               whileTap={{ scale: 0.95 }}
             >
               <img
-                src="./kamta-white.png"
+                src="/kamta-white.png"
                 alt="Asaagility-logo"
                 className="h-5 md:h-7"
                 loading="eager"

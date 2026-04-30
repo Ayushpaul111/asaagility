@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
               >
                 <video
                   className="absolute top-0 left-0 w-full h-full rounded-2xl object-cover"
-                  src="/sanaka-battery.mp4"
+                  src="/kamta-battery.webm"
                   autoPlay
                   muted
                   loop

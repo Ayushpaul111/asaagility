@@ -75,7 +75,7 @@ const comparisonData: ComparisonFeature[] = [
   },
   {
     feature: "Mileage",
-    sanaka: "Up to 120 km",
+    sanaka: "Up to 125 km",
     normal: "40 – 70 km",
   },
   {
@@ -263,7 +263,7 @@ export default function BatteryComparisonTable() {
         {/* Main Card Container */}
         <div className="mb-12 text-center px-4">
           <h2 className="text-3xl sm:text-4xl font-medium tracking-tighter">
-            Advantages of Sanaka Lithium Battery
+            Advantages of Kamta Lithium Battery
           </h2>
           <p className="text-xs uppercase text-neutral-500 tracking-widest mb-2">
             over Normal Acid Battery
@@ -290,7 +290,7 @@ export default function BatteryComparisonTable() {
             <div className="grid grid-cols-2 bg-gray-50 border-b border-gray-200">
               <div className="px-4 py-3 text-center">
                 <span className="text-sm font-semibold text-blue-600">
-                  Sanaka Lithium
+                  Kamta Lithium
                 </span>
               </div>
               <div className="px-4 py-3 text-center border-l border-gray-200">
@@ -342,7 +342,7 @@ export default function BatteryComparisonTable() {
               </div>
               <div className="px-4 lg:px-6 py-4 lg:py-5 text-center border-l border-gray-200">
                 <h3 className="text-lg lg:text-xl font-semibold text-blue-600">
-                  Sanaka Lithium
+                  Kamta Lithium
                 </h3>
                 <p className="text-xs lg:text-sm text-gray-500 mt-0.5">
                   Advanced battery technology

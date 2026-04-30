@@ -70,7 +70,7 @@ const CtaBanner: React.FC = () => {
             <div className="order-2 lg:hidden bg-[#1C1C1C] flex justify-center items-center bg-[url('https://cdn.prod.website-files.com/66797c2909f9ec0b1ff1a767/667e846c24ba851c63c4d965_dark-noise-2.png'),_linear-gradient(#393737)]">
               <img
                 src="/sanaka-battery-e-rickshaw.png"
-                alt="Phone in banner"
+                alt="sanaka battery"
                 className="w-120 drop-shadow-2xl -mt-16 -mb-8 z-10"
               />
             </div>
