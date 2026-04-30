@@ -290,7 +290,7 @@ const Header: React.FC = () => {
               <img
                 src="./kamta-white.png"
                 alt="Asaagility-logo"
-                className="h-5 md:h-8"
+                className="h-5 md:h-7"
                 loading="eager"
                 decoding="async"
               />
