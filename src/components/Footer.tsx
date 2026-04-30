@@ -7,8 +7,14 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-2 md:col-span-1">
-            <a href="#" className="mb-6 inline-block">
-              <PopcornIcon className="h-10 w-10" />
+            <a href="/" className="mb-6 inline-block">
+              <img
+                src="./kamta-white.png"
+                alt="Asaagility-logo"
+                className="h-12 md:h-12"
+                loading="eager"
+                decoding="async"
+              />
             </a>
           </div>
           <div>
