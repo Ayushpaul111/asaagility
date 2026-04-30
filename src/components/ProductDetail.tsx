@@ -15,6 +15,7 @@ export interface ProductVariant {
   capacity: string;
   warranty: number;
   price: number;
+  discount?: number;
 }
 
 interface ProductDetailProps {
@@ -25,6 +26,7 @@ interface ProductDetailProps {
   capacity: string;
   warranty: number;
   price: number;
+  discount?: number;
   specifications: Specification[];
   features: string[];
   variants?: ProductVariant[];
@@ -38,6 +40,7 @@ const ProductDetail = ({
   capacity,
   warranty,
   price,
+  discount,
   specifications,
   features,
   variants,
@@ -54,9 +57,10 @@ const ProductDetail = ({
         capacity: v.capacity,
         warranty: v.warranty,
         price: v.price,
+        discount: v.discount,
       };
     }
-    return { voltage, capacity, warranty, price };
+    return { voltage, capacity, warranty, price, discount };
   }, [
     hasVariants,
     selectedVariantIndex,
@@ -65,6 +69,7 @@ const ProductDetail = ({
     capacity,
     warranty,
     price,
+    discount,
   ]);
 
   // Price range for variants
@@ -155,13 +160,23 @@ const ProductDetail = ({
 
               {/* Price Block */}
               <div className="space-y-2">
-                <div className="inline-flex items-end gap-4">
-                  <span className="text-5xl font-extrabold text-black">
-                    {displayPrice}
-                  </span>
-                  {hasVariants == null && (
-                    <span className="text-xs uppercase tracking-widest text-black/40 mb-1">
-                      Starting
+                <div className="inline-flex items-end gap-4 flex-wrap">
+                  {activeValues.discount != null ? (
+                    <>
+                      <span className="text-5xl font-extrabold text-black">
+                        ₹{activeValues.discount.toLocaleString()}
+                      </span>
+
+                      <span className="text-2xl font-medium text-black/35 line-through mb-1">
+                        {displayPrice}
+                        <span className="pl-2 text-black/40 uppercase text-sm">
+                          starting price
+                        </span>
+                      </span>
+                    </>
+                  ) : (
+                    <span className="text-5xl font-extrabold text-black">
+                      {displayPrice}
                     </span>
                   )}
                 </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import PopcornIcon from "./icons/PopcornIcon";
 
 const Footer: React.FC = () => {
   return (
@@ -9,7 +8,7 @@ const Footer: React.FC = () => {
           <div className="col-span-2 md:col-span-1">
             <a href="/" className="mb-6 inline-block">
               <img
-                src="./kamta-white.png"
+                src="/kamta-white.png"
                 alt="Asaagility-logo"
                 className="h-12 md:h-12"
                 loading="eager"

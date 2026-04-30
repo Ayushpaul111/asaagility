@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import ProductDetail from "@/components/ProductDetail";
 
 export const metadata: Metadata = {
-  title: "E-Rickshaw Lithium Battery 60V 100Ah | ASA Agility",
+  title: "Sanaka E-Rickshaw/E- Lithium Battery 60V 100Ah",
   description:
     "High-performance 60V 100Ah lithium-ion battery for e-rickshaws. Long-lasting, fast-charging, and reliable with 3-year warranty. Designed for commercial use.",
   keywords: [
@@ -18,21 +18,22 @@ export const metadata: Metadata = {
 const ERickshawBattery = () => {
   return (
     <ProductDetail
-      name="E-Rickshaw Lithium Battery"
+      name="SanakaE-Rickshaw/E-loader - Sanaka Lithium Battery"
       description="High-performance 60V 100Ah lithium-ion battery built for the demands of commercial e-rickshaw operations. Delivers exceptional range, rapid charging, and dependable power day after day."
       image="/sanaka-battery-e-rickshaw.png"
-      voltage="60V"
-      capacity="100Ah"
+      voltage="62.2V"
+      capacity="105Ah"
       warranty={3}
-      price={45000}
+      price={75000}
+      discount={61000}
       specifications={[
         { label: "Battery Type", value: "Lithium-Ion (LiFePO4)" },
-        { label: "Nominal Voltage", value: "60V" },
-        { label: "Capacity", value: "100Ah" },
+        { label: "Nominal Voltage", value: "62.2V" },
+        { label: "Capacity", value: "105Ah" },
         { label: "Cycle Life", value: "2000+ cycles" },
         { label: "Charging Time", value: "4-5 hours" },
         { label: "Operating Temperature", value: "-10°C to 55°C" },
-        { label: "Weight", value: "~28 kg" },
+        { label: "Weight", value: "~48 kg" },
         { label: "Dimensions", value: "Standard e-rickshaw fit" },
         { label: "BMS Protection", value: "Advanced smart BMS" },
         { label: "Warranty", value: "3 years comprehensive" },

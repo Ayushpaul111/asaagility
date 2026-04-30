@@ -23,6 +23,7 @@ const ProductCard = ({
   specs,
   warranty,
   pricing,
+  discount,
   slug,
   index,
 }: any) => {
@@ -74,10 +75,21 @@ const ProductCard = ({
           </div>
 
           {/* Pricing */}
-          <div className="flex items-baseline gap-3">
-            <span className="text-3xl font-bold">
-              ₹{pricing.toLocaleString()}
-            </span>
+          <div className="flex items-baseline gap-3 flex-wrap">
+            {discount != null ? (
+              <>
+                <span className="text-3xl font-bold">
+                  ₹{discount.toLocaleString()}
+                </span>
+                <span className="text-xl font-medium text-black/35 line-through">
+                  ₹{pricing.toLocaleString()}
+                </span>
+              </>
+            ) : (
+              <span className="text-3xl font-bold">
+                ₹{pricing.toLocaleString()}
+              </span>
+            )}
             <span className="text-black/40 uppercase text-sm">
               starting price
             </span>
@@ -106,27 +118,29 @@ const ProductCard = ({
 const Products = () => {
   const products = [
     {
-      title: "E-Rickshaw Battery",
-      image: "/sanaka-battery-e-rickshaw.png",
-      specs: { voltage: "60V", capacity: "100Ah" },
+      title: " Kamta E-Rickshaw/E-Loader Battery",
+      image: "/kamta-battery.png",
+      specs: { voltage: "62.2V", capacity: "105Ah" },
       warranty: 3,
-      pricing: 45000,
-      slug: "e-rickshaw-battery",
+      pricing: 75000,
+      discount: 61000,
+      slug: "kamta-battery",
     },
     {
-      title: "E-Loader Battery",
+      title: "Sanaka E-Rickshaw/E-Loader Battery",
       image: "/sanaka-battery-e-rickshaw.png",
-      specs: { voltage: "72V", capacity: "120Ah" },
+      specs: { voltage: "62.2V", capacity: "105Ah" },
       warranty: 3,
-      pricing: 65000,
-      slug: "e-loader-battery",
+      pricing: 75000,
+      discount: 61000,
+      slug: "sanaka-battery",
     },
     {
       title: "E-Bike & Scooty Battery",
       image: "/ev-bike-battery.png",
-      specs: { voltage: "48V", capacity: "30Ah" },
+      specs: { voltage: "48V-60V", capacity: "23Ah-72Ah" },
       warranty: 2,
-      pricing: 18000,
+      pricing: 14000,
       slug: "e-bike-scooty-battery",
     },
   ];
