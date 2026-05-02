@@ -17,21 +17,26 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "ASA Agility",
+    default:
+      "ASA Agility | Lithium Kamta Battery for E-Rickshaw & E-Bike in Cooch Behar",
     template: "%s | ASA Agility",
   },
-  description: "Welcome to ASA Agility - Your description here",
+  description:
+    "ASA Agility is a leading lithium battery manufacturer and retailer in Cooch Behar, West Bengal. Premium batteries for e-rickshaw, e-loader, and e-bike with fast approval finance options.",
   keywords: [
-    "Lithium battery",
-    "Lithium battery for bikes",
-    "Lithium battery for e-rickshaw",
     "ASA Agility",
-    "Lithium battery for bikes",
-    "Lithium battery in coochbehar",
-    "toto battery in coochbehar",
-    "electric rickshaw battery in coochbehar",
+    "lithium battery Cooch Behar",
+    "lithium battery for e-rickshaw",
+    "toto battery Cooch Behar",
+    "electric rickshaw battery West Bengal",
+    "e-bike lithium battery",
+    "e-loader battery",
     "lithium ion battery for electric vehicles",
-    "lithium battery manufacturer",
+    "lithium battery manufacturer India",
+    "Kamta battery",
+    "Sanaka battery",
+    "60V lithium battery",
+    "72V lithium battery",
   ],
   authors: [{ name: "ASA Agility" }],
   creator: "ASA Agility",
@@ -40,18 +45,19 @@ export const metadata: Metadata = {
   ),
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_IN",
     url: "/",
-    title: "ASA Agility",
+    title:
+      "ASA Agility | Lithium Battery for E-Rickshaw & E-Bike in Cooch Behar",
     description:
-      "One stop solution for all your lithium battery for bikes and e-rickshaw.",
-    siteName: "ASA Agility",
+      "ASA Agility is a leading lithium battery manufacturer and retailer in Cooch Behar, West Bengal. Premium batteries for e-rickshaw, e-loader, and e-bike.",
+    siteName: "ASA Agility - Kamta Battery",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ASA Agility",
+    title: "ASA Agility | Lithium Battery for E-Rickshaw & E-Bike",
     description:
-      "One stop solution for all your lithium battery for bikes and e-rickshaw.",
+      "Premium lithium batteries for e-rickshaw, e-loader, and e-bike. Trusted manufacturer in Cooch Behar, West Bengal.",
   },
   robots: {
     index: true,
@@ -63,9 +69,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  verification: {
-    google: "your-google-verification-code",
   },
 };
 

@@ -1,4 +1,21 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "About Us | ASA Agility – Lithium Battery Manufacturer in Cooch Behar",
+  description:
+    "Learn about ASA Agility, a lithium battery manufacturer and retailer based in Cooch Behar, West Bengal. Serving 500+ dealers with reliable e-rickshaw and e-bike battery solutions since inception.",
+  keywords: [
+    "about ASA Agility",
+    "lithium battery company Cooch Behar",
+    "e-rickshaw battery manufacturer",
+    "electric vehicle battery dealer West Bengal",
+    "ASA Agility team",
+  ],
+  alternates: {
+    canonical: "/about-us",
+  },
+};
 
 const about = () => {
   const stats = [
