@@ -213,27 +213,24 @@ export default function ContactForm() {
           ? formData.otherSpecification
           : (formData.productType ?? "");
 
-      const response = await fetch(
-        "https://n8n.ayushpaul.dev/webhook/asaagility-site-lead",
+      const body = new URLSearchParams({
+        "entry.1367263350": `${formData.firstName} ${formData.lastName}`.trim(),
+        "entry.2070041651": formData.email,
+        "entry.335033716": `${formData.countryCode}${formData.phone}`,
+        "entry.286413634": interest,
+        "entry.402528319": formData.message,
+        "entry.625230017": "New Lead",
+      });
+
+      await fetch(
+        "https://docs.google.com/forms/d/e/1FAIpQLSe_WvGVbEZ9WRIZa0jFXdgtk3O00U_cvcQQI79zWJggYdbDLA/formResponse",
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify([
-            {
-              name: `${formData.firstName} ${formData.lastName}`.trim(),
-              email: formData.email,
-              number: `${formData.countryCode}${formData.phone}`,
-              interest,
-              message: formData.message,
-              status: "New Lead",
-            },
-          ]),
+          mode: "no-cors",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: body.toString(),
         },
       );
-
-      if (!response.ok) {
-        throw new Error(`Webhook responded with status ${response.status}`);
-      }
 
       setIsSubmitted(true);
     } catch (error) {
