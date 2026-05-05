@@ -21,6 +21,10 @@ export const metadata: Metadata = {
     "Sanaka battery",
     "electric vehicle battery West Bengal",
     "lithium battery manufacturer",
+    "toto battery Dinhata",
+    "toto battery matha bhanga",
+    "toto battery Alipur",
+    "toto battery Alipurduar",
   ],
   alternates: {
     canonical: "/",
