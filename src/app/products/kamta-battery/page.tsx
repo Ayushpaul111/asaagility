@@ -51,7 +51,7 @@ const ERickshawBattery = () => {
     <ProductDetail
       name="Kamta E-Rickshaw/E-loader Lithium Battery"
       description=""
-      image="/sanaka-battery-e-rickshaw.png"
+      image="/kamta-battery.png"
       voltage="62.2V"
       capacity="105Ah-150Ah"
       warranty={5}
